@@ -12,6 +12,12 @@
       object-fit: contain;
       filter: opacity(0.95);
       animation: rotateClockwise 30s linear infinite;
+      @media (prefers-reduced-motion) {
+        animation: none;
+      }
+      @media (pointer: coarse) {
+        animation: none;
+      }
     }
   }
   .logo {
