@@ -57,7 +57,11 @@ const SingleFeature = ({
         />
       </motion.div>
       <motion.h3
-        variants={createAnimation('fadeInDown')}
+        variants={
+          width > breakpoints.med
+            ? createAnimation('fadeInDown')
+            : createAnimation('fadeIn')
+        }
         className={styles.head}>
         {head}
       </motion.h3>

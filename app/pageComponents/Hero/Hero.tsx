@@ -2,15 +2,19 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useWindowSize } from 'usehooks-ts';
 
 import createAnimation from '@/helpers/createAnimation';
 import character1 from '@/public/character-1.webp';
 import grid from '@/public/grid.svg';
 import arrow from '@/public/arrow.svg';
 import Character from '@/components/reusable/Character/Character';
+import { breakpoints } from '@/helpers/breakpoints';
 import styles from './Hero.module.scss';
 
 const Hero = () => {
+  const { width } = useWindowSize();
+
   const scrollToPos = () => {
     const yOffset = -100;
     const element = document.getElementById('call-to-action');
@@ -21,11 +25,19 @@ const Hero = () => {
   return (
     <section className={styles.heroSection}>
       <motion.div
-        variants={createAnimation('staggerContainer')}
+        variants={
+          width > breakpoints.med
+            ? createAnimation('staggerContainer')
+            : createAnimation('fadeIn')
+        }
         initial="hidden"
         animate="show">
         <motion.div
-          variants={createAnimation('fadeInScale')}
+          variants={
+            width > breakpoints.med
+              ? createAnimation('fadeInScale')
+              : createAnimation('fadeIn')
+          }
           className={styles.gridBox}>
           <Image
             src={grid}

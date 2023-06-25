@@ -7,10 +7,12 @@ import {
   useScroll,
   useTransform,
 } from 'framer-motion';
+import { useWindowSize } from 'usehooks-ts';
 
 import createAnimation from '@/helpers/createAnimation';
 import portal from '@/public/portal.webp';
 import styles from './Character.module.scss';
+import { breakpoints } from '@/helpers/breakpoints';
 
 interface CharacterProps {
   width?: number;
@@ -26,6 +28,8 @@ const Character = ({
   character,
 }: CharacterProps) => {
   const { scrollY } = useScroll();
+  const { width: windowWidth } = useWindowSize();
+
   let degrees;
   if (rotationDirection === 'clockwise') {
     degrees = 360;
@@ -52,14 +56,7 @@ const Character = ({
             }
           : {} // if width and maxWidth are given, set the width and height of the character to the width prop and the maxWidth prop, respectively
       }
-      variants={createAnimation('custom', {
-        duration: 0.2,
-        delay: 0.4,
-        movementVector: { x: 0, y: 50 },
-        timingFunction: 'linear',
-        opacity: { start: 0, end: 1 },
-        scale: { start: 1, end: 1 },
-      })}
+      variants={createAnimation('fadeIn')}
       initial={'hidden'}
       animate={'show'}>
       <Image
