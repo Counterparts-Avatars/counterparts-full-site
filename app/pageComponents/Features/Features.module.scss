@@ -1,0 +1,7 @@
+@import '/styles/sass/mixins';
+
+.featuresSection {
+  position: relative;
+  text-align: center;
+  @include sectionInit;
+}

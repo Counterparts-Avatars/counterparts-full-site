@@ -1,0 +1,46 @@
+@import '/styles/sass/mixins';
+
+.heroSection {
+  position: relative;
+  margin-top: $navbar-height * 1.25;
+  margin-bottom: 10rem;
+  --gap: 2rem;
+  text-align: center;
+  @include sectionInit;
+  .gridBox {
+    position: absolute;
+    height: 35%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -10;
+    .grid {
+      object-fit: cover;
+      object-position: center;
+      filter: opacity(0.25);
+    }
+  }
+  .head {
+    font-weight: 300;
+    font-size: 4rem;
+    margin: var(--gap) 0;
+    .subHead {
+      font-weight: 600;
+      font-size: 4.3rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  }
+  .description {
+    font-size: 1.9rem;
+    line-height: 2.7rem;
+  }
+  .mainBtn {
+    @include mainBtn;
+    width: 20rem;
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    translate: -50%;
+  }
+}

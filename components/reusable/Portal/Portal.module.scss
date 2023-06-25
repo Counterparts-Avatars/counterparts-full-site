@@ -1,0 +1,21 @@
+@import '/styles/sass/animations';
+
+.portalBox {
+  position: relative;
+  --width: 15rem;
+  width: var(--width);
+  height: var(--width);
+  .spinnerBox {
+    width: var(--width);
+    height: var(--width);
+    .portal {
+      object-fit: contain;
+      filter: opacity(0.95);
+      animation: rotateClockwise 30s linear infinite;
+    }
+  }
+  .logo {
+    object-fit: contain;
+    scale: 0.5;
+  }
+}

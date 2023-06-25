@@ -1,0 +1,73 @@
+@import '/styles/sass/mixins';
+@import '/styles/sass/animations';
+
+.form {
+  position: relative;
+  label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: rgba($color-light, 0.5);
+    font-size: 1.6rem;
+    z-index: -1;
+  }
+  .emailInput {
+    border: 1px solid $color-light;
+    border-right: none;
+    color: $color-light;
+    font-size: 1.6rem;
+    padding: 1rem;
+    border-radius: $btn-border-radius 0 0 $btn-border-radius;
+    background-color: rgba($color-dark, 0.4);
+    &.errorInput {
+      color: $color-accent;
+      border: 1px solid $color-accent;
+    }
+    &:focus {
+      outline: 1px solid rgba($color-white, 0.75);
+      border: 1px solid transparent;
+    }
+  }
+  .submitBtn {
+    position: relative;
+    border: 1px solid $color-light;
+    background-color: $color-light;
+    color: transparent;
+    border-left: none;
+    font-size: 1.6rem;
+    padding: 1rem;
+    filter: opacity(0.8);
+    border-radius: 0 $btn-border-radius $btn-border-radius 0;
+    transition: all 0.3s;
+    &.errorBtn {
+      border: 1px solid $color-accent;
+      background-color: $color-accent;
+    }
+    &:active {
+      filter: opacity(0.7);
+    }
+    &:hover {
+      cursor: pointer;
+      filter: opacity(1);
+    }
+    &:disabled {
+      filter: opacity(0.4);
+      &:hover {
+        cursor: default;
+      }
+    }
+    .arrow,
+    .check,
+    .error,
+    .pending {
+      padding: 0.5rem;
+      transition: all 0.3s linear;
+      animation: rotateClockwise 0.3s linear;
+    }
+    &:not([disabled]) {
+      .arrow {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

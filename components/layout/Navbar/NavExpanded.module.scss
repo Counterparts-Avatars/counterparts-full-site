@@ -1,0 +1,63 @@
+@import '/styles/sass/mixins';
+
+.overlayBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: $navbar-height;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: $navbar-height / 2;
+  background-image: linear-gradient(
+    rgba($color-dark, 0.75),
+    rgba($color-dark, 1)
+  );
+  backdrop-filter: blur(20px);
+  z-index: 100;
+  .navBox {
+    --height: 30rem;
+    position: relative;
+    width: 95%;
+    .frameBox {
+      width: 100%;
+      height: 5rem;
+      position: relative;
+      &:last-of-type {
+        scale: -1;
+      }
+      .gameframe {
+        object-fit: contain;
+      }
+    }
+    .navLinks {
+      text-align: center;
+      .listItem {
+        &:last-child {
+          .link {
+            &:last-child {
+              @include mainBtn;
+              padding: 0 2.5rem;
+              margin: 2rem auto;
+            }
+          }
+        }
+        .link {
+          font-size: 3rem;
+          line-height: 6rem;
+          &.link__active {
+            color: $color-light;
+          }
+        }
+      }
+    }
+    .socials {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2rem auto;
+    }
+  }
+}

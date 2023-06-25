@@ -1,0 +1,85 @@
+@import 'variables';
+
+@mixin sectionInit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mainBtn {
+  display: flex;
+  justify-content: center;
+  --border-width: 1px;
+  width: fit-content;
+  border-radius: $btn-border-radius-mobile;
+  padding: 2rem;
+  z-index: 10;
+  color: $color-light;
+  border: solid var(--border-width) rgba($color-light, 0.5);
+  font-size: 2.5rem;
+  background-image: linear-gradient(to bottom, $gradient-color-3, $color-dark);
+  box-shadow: 0 4px 8px rgba($color-dark, 0.75);
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  margin: 0 auto;
+  span {
+    display: inline-block;
+    margin: 0.3rem 0 0 1rem;
+    transition: all 0.2s ease-in-out;
+  }
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    filter: saturate(1.2);
+    box-shadow: 0 2px 3px rgba($color-dark, 1);
+    & > span {
+      transform: translateX(0.7rem);
+    }
+  }
+}
+
+@mixin textBox {
+  backdrop-filter: blur(10px);
+  border-radius: $box-border-radius;
+  border-top: 1px solid rgba($color-light, 0.5);
+  border-bottom: 1px solid rgba($color-light, 0.5);
+  box-shadow: 0px 2px 0px 0px rgba($color-accent, 0.5);
+  background-image: linear-gradient(
+    to bottom,
+    rgba($color-dark, 0.65) 0%,
+    rgba($color-dark, 0.85) 100%
+  );
+}
+
+// Breakpoints
+@mixin screen-desktop-sm {
+  @media (min-width: 1279.98px) {
+    @content;
+  }
+}
+
+@mixin screen-tablet-lg {
+  @media (min-width: 1023.98px) {
+    @content;
+  }
+}
+
+@mixin screen-tablet-sm {
+  @media (min-width: 767.98px) {
+    @content;
+  }
+}
+
+@mixin screen-mobile-lg {
+  @media (min-width: 479.98px) {
+    @content;
+  }
+}
+
+@mixin screen-mobile-sm {
+  @media (min-width: 399.98px) {
+    @content;
+  }
+}

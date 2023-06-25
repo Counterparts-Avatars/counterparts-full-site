@@ -1,0 +1,26 @@
+@import '/styles/sass/animations';
+
+.characterBox {
+  position: relative;
+  --width: 30rem;
+  width: var(--width);
+  height: calc(var(--width) * 1.2);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  .character {
+    object-fit: contain;
+    z-index: 1;
+    transform: translateY(-3%);
+  }
+  .portalBox {
+    position: relative;
+    width: var(--width);
+    height: var(--width);
+    .portal {
+      object-fit: contain;
+      filter: opacity(0.95);
+      animation: rotateClockwise 60s linear infinite;
+    }
+  }
+}

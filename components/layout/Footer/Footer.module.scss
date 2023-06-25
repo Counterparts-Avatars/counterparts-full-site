@@ -1,0 +1,43 @@
+@import '/styles/sass/mixins';
+
+.footerBox {
+  width: 100vw;
+  height: fit-content;
+  margin-top: 3rem;
+  background-image: linear-gradient(
+    to bottom,
+    rgba($color-dark, 0),
+    rgba($color-dark, 0.5)
+  );
+  .footer {
+    @include sectionInit;
+    padding-top: 5rem;
+    border-top: 1px solid rgba($color-light, 0.5);
+    gap: 3rem;
+    .logoLink {
+      text-align: center;
+      .logo {
+        width: 80%;
+        height: auto;
+      }
+    }
+    .navLinks {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      font-size: 1.6rem;
+      filter: opacity(0.95);
+    }
+    .socials {
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: auto;
+    }
+    .copyright {
+      filter: opacity(0.75);
+      margin-bottom: 1rem;
+    }
+  }
+}

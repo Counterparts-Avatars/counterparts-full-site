@@ -1,0 +1,35 @@
+@import '/styles/sass/variables';
+
+.holoBox {
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .frameBox {
+    width: 100%;
+    height: 10rem;
+    position: relative;
+    &:last-child {
+      scale: -1;
+      top: unset;
+      bottom: 0;
+    }
+    .gameframe {
+      object-fit: contain;
+    }
+  }
+  .text {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 3.4rem;
+    .counterpart {
+      text-transform: uppercase;
+      span {
+        color: $color-light;
+      }
+    }
+    .emphasizedText {
+      color: $color-light;
+    }
+  }
+}

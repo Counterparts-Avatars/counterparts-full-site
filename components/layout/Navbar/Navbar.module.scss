@@ -1,0 +1,33 @@
+@import '/styles/sass/variables';
+
+.navBox {
+  width: 100%;
+  height: $navbar-height;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 1px 10px 0px rgba($color-dark, 0);
+  transition: all 0.3s;
+  &.navBox__mobile,
+  &.navBox__scrolled {
+    background-color: rgba($color-dark, 0.75);
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 1px 10px 1px rgba($color-dark, 0.5);
+  }
+  &.navBox__mobile {
+    .logo {
+      width: 24rem;
+      height: auto;
+    }
+  }
+  .innerNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

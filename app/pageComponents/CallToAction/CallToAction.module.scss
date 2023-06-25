@@ -1,0 +1,47 @@
+@import '/styles/sass/mixins';
+
+.actionSection {
+  position: relative;
+  height: 35rem;
+  @include sectionInit;
+  gap: 2rem;
+  justify-content: flex-start;
+  margin-top: 15rem;
+  .actionHead {
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+  }
+  .portalBox {
+    position: absolute;
+    z-index: -10;
+    top: 2rem;
+  }
+  .characterGroup {
+    width: 100vw;
+    height: auto;
+  }
+  .formContainer {
+    position: absolute;
+    top: 15rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    margin: auto;
+    width: 100%;
+    height: fit-content;
+    padding: 2rem;
+    @include textBox;
+    .subText {
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+      .part {
+        color: $color-light;
+      }
+    }
+  }
+}
