@@ -36,7 +36,7 @@ const SingleFeature = ({
       variants={
         width > breakpoints.med
           ? createAnimation('staggerContainer')
-          : createAnimation('fadeInUp')
+          : createAnimation('fadeIn')
       }
       initial="hidden"
       whileInView="show"
