@@ -8,8 +8,8 @@
   .gridBox {
     position: absolute;
     width: 100vw;
-    height: 85%;
-    top: 11rem;
+    height: 90%;
+    top: 7rem;
     z-index: -10;
     left: -$page-margin-xsmall / 2;
     @include screen-mobile-sm {
