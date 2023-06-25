@@ -3,17 +3,21 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Audiowide } from 'next/font/google';
+import { useWindowSize } from 'usehooks-ts';
 
 import characterGroupSmall from '@/public/character-group-small.webp';
 import characterGroupLarge from '@/public/character-group-large.webp';
 import createAnimation from '@/helpers/createAnimation';
 import EmailForm from './EmailForm';
 import Portal from '@/components/reusable/Portal/Portal';
+import { breakpoints } from '@/helpers/breakpoints';
 import styles from './CallToAction.module.scss';
 
 const audiowide = Audiowide({ subsets: ['latin'], weight: '400' });
 
 const CallToAction = () => {
+  const { width } = useWindowSize();
+
   return (
     <motion.section
       id="call-to-action"
@@ -41,6 +45,7 @@ const CallToAction = () => {
           width={200}
           maxWidth={200}
           rotationDirection="clockwise"
+          scrollAnimation={width > breakpoints.med}
           logo
         />
       </motion.div>
