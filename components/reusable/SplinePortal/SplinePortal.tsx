@@ -3,7 +3,9 @@
 import Spline from '@splinetool/react-spline';
 import { Suspense } from 'react';
 import Image from 'next/image';
+import { useWindowSize } from 'usehooks-ts';
 
+import { breakpoints } from '@/helpers/breakpoints';
 import portalIso from '@/public/portal-iso.webp';
 
 interface SplinePortalProps {
@@ -21,8 +23,12 @@ interface SplinePortalProps {
 
 const splineUrl =
   'https://prod.spline.design/LFoSb72iQYYsKVfN/scene.splinecode';
+const splineUrlMobile =
+  'https://prod.spline.design/I2wefwEIrxc3yBGa/scene.splinecode';
 
 const SplinePortal = ({ position, scale, width }: SplinePortalProps) => {
+  const { width: windowWidth } = useWindowSize();
+
   return (
     <Suspense
       fallback={
@@ -43,7 +49,7 @@ const SplinePortal = ({ position, scale, width }: SplinePortalProps) => {
         />
       }>
       <Spline
-        scene={splineUrl}
+        scene={windowWidth > breakpoints.med ? splineUrl : splineUrlMobile}
         style={{
           position: 'absolute',
           zIndex: -100,
