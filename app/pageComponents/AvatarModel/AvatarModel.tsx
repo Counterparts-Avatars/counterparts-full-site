@@ -8,6 +8,7 @@ import createAnimation from '@/helpers/createAnimation';
 import styles from './AvatarModel.module.scss';
 import SplinePortal from '@/components/reusable/SplinePortal/SplinePortal';
 import { useWindowSize } from 'usehooks-ts';
+import { breakpoints } from '@/helpers/breakpoints';
 
 const callOuts = [
   { title: 'Glasses', description: 'Funded climate research' },
@@ -18,6 +19,36 @@ const callOuts = [
 
 const AvatarModel = () => {
   const { width } = useWindowSize();
+
+  let portalScale;
+  let topPortalTranslateY;
+  let bottomPortalTranslateY;
+
+  if (width < breakpoints.xsmall) {
+    portalScale = 0.5;
+    topPortalTranslateY = '5%';
+    bottomPortalTranslateY = '88%';
+  } else if (width < breakpoints.small && width >= breakpoints.xsmall) {
+    portalScale = 0.6;
+    topPortalTranslateY = '5%';
+    bottomPortalTranslateY = '75%';
+  } else if (width < breakpoints.med && width >= breakpoints.small) {
+    portalScale = 0.6;
+    topPortalTranslateY = '5%';
+    bottomPortalTranslateY = '75%';
+  } else if (width < breakpoints.large && width >= breakpoints.med) {
+    portalScale = 0.6;
+    topPortalTranslateY = '5%';
+    bottomPortalTranslateY = '75%';
+  } else if (width < breakpoints.xlarge && width >= breakpoints.large) {
+    portalScale = 0.6;
+    topPortalTranslateY = '5%';
+    bottomPortalTranslateY = '75%';
+  } else {
+    portalScale = 0.6;
+    topPortalTranslateY = '5%';
+    bottomPortalTranslateY = '75%';
+  }
 
   return (
     <section className={styles.modelSection}>
@@ -55,9 +86,9 @@ const AvatarModel = () => {
           left: '0',
           right: '0',
           translateX: '-50%',
-          translateY: '5%',
+          translateY: topPortalTranslateY,
         }}
-        scale={0.5}
+        scale={portalScale}
         width={300}
       />
       <SplinePortal
@@ -67,9 +98,9 @@ const AvatarModel = () => {
           left: '0',
           right: '0',
           translateX: '-50%',
-          translateY: '88%',
+          translateY: bottomPortalTranslateY,
         }}
-        scale={'-0.5 0.5'}
+        scale={`-${portalScale} ${portalScale}`}
         width={300}
       />
     </section>

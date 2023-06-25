@@ -29,7 +29,7 @@ const SplinePortal = ({ position, scale, width }: SplinePortalProps) => {
         <Image
           src={portalIso}
           alt=""
-          width={400}
+          width={350}
           height={200}
           style={{
             position: 'absolute',
