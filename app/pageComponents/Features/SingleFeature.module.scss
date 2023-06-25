@@ -8,10 +8,13 @@
   .gridBox {
     position: absolute;
     width: 100vw;
-    left: -$page-margin-xsmall / 2;
     height: 85%;
     top: 11rem;
     z-index: -10;
+    left: -$page-margin-xsmall / 2;
+    @include screen-mobile-sm {
+      left: -$page-margin-small / 2;
+    }
     .grid {
       object-fit: cover;
       object-position: center;

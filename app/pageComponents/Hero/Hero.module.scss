@@ -9,11 +9,14 @@
   @include sectionInit;
   .gridBox {
     position: absolute;
+    width: 100vw;
     height: 35%;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: 60%;
     z-index: -10;
+    left: -$page-margin-xsmall / 2;
+    @include screen-mobile-sm {
+      left: -$page-margin-small / 2;
+    }
     .grid {
       object-fit: cover;
       object-position: center;

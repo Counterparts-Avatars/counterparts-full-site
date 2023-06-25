@@ -42,7 +42,11 @@ const SingleFeature = ({
       whileInView="show"
       viewport={{ once: true, amount: 0.75 }}>
       <motion.div
-        variants={createAnimation('fadeInScale')}
+        variants={
+          width > breakpoints.med
+            ? createAnimation('fadeInScale')
+            : createAnimation('fadeIn')
+        }
         className={styles.gridBox}>
         <Image
           src={grid}
