@@ -8,8 +8,8 @@ import createAnimation from '@/helpers/createAnimation';
 import grid from '@/public/grid.svg';
 import Character from '@/components/reusable/Character/Character';
 import Portal from '@/components/reusable/Portal/Portal';
-import styles from './SingleFeature.module.scss';
 import { breakpoints } from '@/helpers/breakpoints';
+import styles from './SingleFeature.module.scss';
 
 interface SingleFeatureProps {
   index: number;
@@ -75,7 +75,13 @@ const SingleFeature = ({
         <Character
           width={width * 0.55}
           maxWidth={300}
-          rotationDirection={index % 2 === 0 ? 'counterclockwise' : 'clockwise'}
+          rotationDirection={
+            width > breakpoints.med
+              ? index % 2 === 0
+                ? 'counterclockwise'
+                : 'clockwise'
+              : 'none'
+          }
           character={character}
         />
       </motion.div>
@@ -89,7 +95,13 @@ const SingleFeature = ({
         <Portal
           width={75}
           maxWidth={75}
-          rotationDirection={index % 2 === 0 ? 'clockwise' : 'counterclockwise'}
+          rotationDirection={
+            width > breakpoints.med
+              ? index % 2 === 0
+                ? 'clockwise'
+                : 'counterclockwise'
+              : 'none'
+          }
           logo={false}
         />
       </motion.div>

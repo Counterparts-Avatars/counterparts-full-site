@@ -15,7 +15,7 @@ import styles from './Portal.module.scss';
 interface PortalProps {
   width?: number;
   maxWidth?: number;
-  rotationDirection: 'clockwise' | 'counterclockwise';
+  rotationDirection: 'clockwise' | 'counterclockwise' | 'none';
   logo: boolean;
 }
 
@@ -24,8 +24,10 @@ const Portal = ({ width, maxWidth, rotationDirection, logo }: PortalProps) => {
   let degrees;
   if (rotationDirection === 'clockwise') {
     degrees = 360;
-  } else {
+  } else if (rotationDirection === 'counterclockwise') {
     degrees = -360;
+  } else {
+    degrees = 0;
   }
   const rotation = useTransform(scrollY, [0, 1500], [0, degrees], {
     clamp: false,

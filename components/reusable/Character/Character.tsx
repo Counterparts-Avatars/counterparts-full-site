@@ -7,17 +7,15 @@ import {
   useScroll,
   useTransform,
 } from 'framer-motion';
-import { useWindowSize } from 'usehooks-ts';
 
 import createAnimation from '@/helpers/createAnimation';
 import portal from '@/public/portal.webp';
 import styles from './Character.module.scss';
-import { breakpoints } from '@/helpers/breakpoints';
 
 interface CharacterProps {
   width?: number;
   maxWidth?: number;
-  rotationDirection: 'clockwise' | 'counterclockwise';
+  rotationDirection: 'clockwise' | 'counterclockwise' | 'none';
   character: StaticImageData;
 }
 
@@ -28,13 +26,14 @@ const Character = ({
   character,
 }: CharacterProps) => {
   const { scrollY } = useScroll();
-  const { width: windowWidth } = useWindowSize();
 
   let degrees;
   if (rotationDirection === 'clockwise') {
     degrees = 360;
-  } else {
+  } else if (rotationDirection === 'counterclockwise') {
     degrees = -360;
+  } else {
+    degrees = 0;
   }
   const rotation = useTransform(scrollY, [0, 1500], [0, degrees], {
     clamp: false,
