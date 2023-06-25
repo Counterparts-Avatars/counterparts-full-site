@@ -9,6 +9,7 @@ import grid from '@/public/grid.svg';
 import Character from '@/components/reusable/Character/Character';
 import Portal from '@/components/reusable/Portal/Portal';
 import styles from './SingleFeature.module.scss';
+import { breakpoints } from '@/helpers/breakpoints';
 
 interface SingleFeatureProps {
   index: number;
@@ -32,7 +33,11 @@ const SingleFeature = ({
           ? `${styles.featureBox} ${styles.featureBox__left}`
           : `${styles.featureBox} ${styles.featureBox__right}`
       }
-      variants={createAnimation('staggerContainer')}
+      variants={
+        width > breakpoints.med
+          ? createAnimation('staggerContainer')
+          : createAnimation('fadeInUp')
+      }
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.75 }}>

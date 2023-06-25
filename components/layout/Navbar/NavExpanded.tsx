@@ -120,7 +120,6 @@ const NavExpanded = ({
               whileInView={'show'}>
               <Link
                 href={social.href}
-                as={'image'}
                 prefetch={false}
                 target="_blank"
                 rel="noreferrer">

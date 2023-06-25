@@ -42,9 +42,7 @@ const Navbar = () => {
             : `${styles.navBox} ${styles.navBox__mobile}`
         }>
         <nav className={styles.innerNav}>
-          <Link
-            href="/"
-            as={'image'}>
+          <Link href="/">
             <Image
               src="/counterparts-logo.svg"
               alt="Counterparts logo"

@@ -21,7 +21,6 @@ const Footer = () => {
         viewport={{ once: true, amount: 0.8 }}>
         <Link
           href="/"
-          as={'image'}
           className={styles.logoLink}>
           <Image
             src={logo}
@@ -51,7 +50,6 @@ const Footer = () => {
               className={styles.socialLink}>
               <Link
                 href={social.href}
-                as={'image'}
                 prefetch={false}
                 target="_blank"
                 rel="noreferrer">
