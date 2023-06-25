@@ -50,7 +50,7 @@ const Hero = () => {
         <motion.h1
           variants={createAnimation('fadeIn')}
           className={styles.head}>
-          Virtual Beings,
+          Virtual Avatars,
           <br />
           <span className={styles.subHead}>Real Impact</span>
         </motion.h1>
