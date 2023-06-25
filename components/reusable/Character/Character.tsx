@@ -15,7 +15,8 @@ import styles from './Character.module.scss';
 interface CharacterProps {
   width?: number;
   maxWidth?: number;
-  rotationDirection: 'clockwise' | 'counterclockwise' | 'none';
+  rotationDirection: 'clockwise' | 'counterclockwise';
+  scrollAnimation: boolean;
   character: StaticImageData;
 }
 
@@ -24,15 +25,16 @@ const Character = ({
   maxWidth,
   rotationDirection,
   character,
+  scrollAnimation,
 }: CharacterProps) => {
   const { scrollY } = useScroll();
 
   let degrees;
-  if (rotationDirection === 'clockwise') {
+  if (scrollAnimation && rotationDirection === 'clockwise') {
     degrees = 360;
-  } else if (rotationDirection === 'counterclockwise') {
+  } else if (scrollAnimation && rotationDirection === 'counterclockwise') {
     degrees = -360;
-  } else {
+  } else if (!scrollAnimation) {
     degrees = 0;
   }
   const rotation = useTransform(scrollY, [0, 1500], [0, degrees], {

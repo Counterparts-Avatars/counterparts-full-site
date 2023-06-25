@@ -81,6 +81,7 @@ const Hero = () => {
         <Character
           rotationDirection="clockwise"
           character={character1}
+          scrollAnimation={width > breakpoints.med}
         />
       </motion.div>
     </section>

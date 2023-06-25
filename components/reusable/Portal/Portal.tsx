@@ -15,18 +15,26 @@ import styles from './Portal.module.scss';
 interface PortalProps {
   width?: number;
   maxWidth?: number;
-  rotationDirection: 'clockwise' | 'counterclockwise' | 'none';
+  rotationDirection: 'clockwise' | 'counterclockwise';
+  scrollAnimation: boolean;
   logo: boolean;
 }
 
-const Portal = ({ width, maxWidth, rotationDirection, logo }: PortalProps) => {
+const Portal = ({
+  width,
+  maxWidth,
+  rotationDirection,
+  scrollAnimation,
+  logo,
+}: PortalProps) => {
   const { scrollY } = useScroll();
+
   let degrees;
-  if (rotationDirection === 'clockwise') {
+  if (scrollAnimation && rotationDirection === 'clockwise') {
     degrees = 360;
-  } else if (rotationDirection === 'counterclockwise') {
+  } else if (scrollAnimation && rotationDirection === 'counterclockwise') {
     degrees = -360;
-  } else {
+  } else if (!scrollAnimation) {
     degrees = 0;
   }
   const rotation = useTransform(scrollY, [0, 1500], [0, degrees], {

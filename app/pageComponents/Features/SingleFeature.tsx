@@ -75,13 +75,8 @@ const SingleFeature = ({
         <Character
           width={width * 0.55}
           maxWidth={300}
-          rotationDirection={
-            width > breakpoints.med
-              ? index % 2 === 0
-                ? 'counterclockwise'
-                : 'clockwise'
-              : 'none'
-          }
+          rotationDirection={index % 2 === 0 ? 'counterclockwise' : 'clockwise'}
+          scrollAnimation={width > breakpoints.med}
           character={character}
         />
       </motion.div>
@@ -95,13 +90,8 @@ const SingleFeature = ({
         <Portal
           width={75}
           maxWidth={75}
-          rotationDirection={
-            width > breakpoints.med
-              ? index % 2 === 0
-                ? 'clockwise'
-                : 'counterclockwise'
-              : 'none'
-          }
+          rotationDirection={index % 2 === 0 ? 'clockwise' : 'counterclockwise'}
+          scrollAnimation={width > breakpoints.med}
           logo={false}
         />
       </motion.div>
