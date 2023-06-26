@@ -74,11 +74,11 @@
       right: 0;
     }
     .portalBox {
-      top: 65%;
-      left: 15%;
+      top: 66%;
+      left: 11%;
       @include screen-mobile-lg {
+        left: 7vw;
         top: 50vw;
-        left: 12vw;
       }
     }
   }
@@ -93,10 +93,10 @@
     }
     .portalBox {
       top: 35%;
-      left: 65%;
+      right: 11%;
       @include screen-mobile-lg {
-        top: 28vw;
-        left: 57vw;
+        right: 7vw;
+        top: 25vw;
       }
     }
   }
