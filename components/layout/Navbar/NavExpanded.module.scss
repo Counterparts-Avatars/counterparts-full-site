@@ -22,8 +22,10 @@
     width: 95%;
     .frameBox {
       width: 100%;
+      max-width: 500px;
       height: 5rem;
       position: relative;
+      margin: 0 auto;
       &:last-of-type {
         scale: -1;
       }
@@ -54,6 +56,7 @@
     }
     .socials {
       width: 80%;
+      max-width: 300px;
       display: flex;
       justify-content: space-between;
       align-items: center;

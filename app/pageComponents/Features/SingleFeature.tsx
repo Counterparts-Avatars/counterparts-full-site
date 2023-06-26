@@ -74,7 +74,7 @@ const SingleFeature = ({
         className={styles.characterBox}>
         <Character
           width={width * 0.55}
-          maxWidth={300}
+          maxWidth={width * 0.55}
           rotationDirection={index % 2 === 0 ? 'counterclockwise' : 'clockwise'}
           scrollAnimation={width > breakpoints.med}
           character={character}
@@ -88,8 +88,8 @@ const SingleFeature = ({
         }
         className={styles.portalBox}>
         <Portal
-          width={75}
-          maxWidth={75}
+          width={width * 0.2}
+          maxWidth={width * 0.2}
           rotationDirection={index % 2 === 0 ? 'clockwise' : 'counterclockwise'}
           scrollAnimation={width > breakpoints.med}
           logo={false}

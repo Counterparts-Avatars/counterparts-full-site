@@ -14,6 +14,9 @@ html {
   @include screen-mobile-sm {
     font-size: 73%;
   }
+  @include screen-mobile-lg {
+    font-size: 87%;
+  }
 }
 
 body {
@@ -41,6 +44,7 @@ main {
   flex-direction: column;
   align-items: center;
   position: relative;
+  gap: 4rem;
 }
 
 section,

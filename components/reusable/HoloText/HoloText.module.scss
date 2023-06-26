@@ -1,4 +1,4 @@
-@import '/styles/sass/variables';
+@import '/styles/sass/mixins';
 
 .holoBox {
   height: 30rem;
@@ -14,6 +14,7 @@
       top: unset;
       bottom: 0;
     }
+
     .gameframe {
       object-fit: contain;
     }
@@ -22,6 +23,11 @@
     text-align: center;
     font-size: 2rem;
     line-height: 3.4rem;
+    @include screen-mobile-lg {
+      font-size: 6vw;
+      line-height: 8vw;
+      padding: 0 1%;
+    }
     .counterpart {
       text-transform: uppercase;
       span {

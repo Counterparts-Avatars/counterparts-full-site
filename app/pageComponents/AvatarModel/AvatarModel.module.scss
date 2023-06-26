@@ -19,6 +19,19 @@
     '. . . . .'
     '. shoes shoes shoes shoes'
     '. . . . .';
+  @include screen-mobile-lg {
+    grid-template-areas:
+      'glasses glasses glasses . .'
+      '. . . . .'
+      '. . . . .'
+      '. . jacket jacket jacket'
+      '. . . . .'
+      '. . . . .'
+      'pants pants pants . .'
+      '. . . . .'
+      '. . shoes shoes shoes'
+      '. . . . .';
+  }
   .portal {
     position: absolute;
     object-fit: contain;
@@ -43,6 +56,10 @@
     font-size: 1.6rem;
     line-height: 2.6rem;
     @include textBox;
+    @include screen-mobile-lg {
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+    }
     .callOutTitle {
       display: block;
       font-size: 2rem;

@@ -4,4 +4,7 @@
   position: relative;
   text-align: center;
   @include sectionInit;
+  @include screen-mobile-lg {
+    margin-bottom: 5vw;
+  }
 }

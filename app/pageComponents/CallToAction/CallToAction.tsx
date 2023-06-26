@@ -42,8 +42,8 @@ const CallToAction = () => {
         })}
         className={styles.portalBox}>
         <Portal
-          width={200}
-          maxWidth={200}
+          width={width * 0.55}
+          maxWidth={width * 0.55}
           rotationDirection="clockwise"
           scrollAnimation={width > breakpoints.med}
           logo

@@ -15,6 +15,9 @@
     @include screen-mobile-sm {
       left: -$page-margin-small / 2;
     }
+    @include screen-mobile-lg {
+      top: 20vw;
+    }
     .grid {
       object-fit: cover;
       object-position: center;
@@ -33,6 +36,9 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    @include screen-mobile-lg {
+      font-size: 18vw;
+    }
   }
   .text {
     position: absolute;
@@ -43,6 +49,12 @@
     width: 75%;
     padding: 2rem 1rem;
     @include textBox;
+    @include screen-mobile-lg {
+      font-size: 5vw;
+      line-height: 7.5vw;
+      width: 70%;
+      top: 35vw;
+    }
   }
   .characterBox {
     position: absolute;
@@ -64,6 +76,10 @@
     .portalBox {
       top: 65%;
       left: 15%;
+      @include screen-mobile-lg {
+        top: 50vw;
+        left: 12vw;
+      }
     }
   }
   &.featureBox__left {
@@ -78,6 +94,10 @@
     .portalBox {
       top: 35%;
       left: 65%;
+      @include screen-mobile-lg {
+        top: 28vw;
+        left: 57vw;
+      }
     }
   }
 }

@@ -7,11 +7,18 @@
   gap: 2rem;
   justify-content: flex-start;
   margin-top: 15rem;
+  @include screen-mobile-lg {
+    height: 40rem;
+    margin-bottom: 10vw;
+  }
   .actionHead {
     font-size: 4.5rem;
     text-transform: uppercase;
     text-align: center;
     font-weight: 600;
+    @include screen-mobile-lg {
+      font-size: 13vw;
+    }
   }
   .portalBox {
     position: absolute;
@@ -21,6 +28,9 @@
   .characterGroup {
     width: 100vw;
     height: auto;
+    @include screen-mobile-lg {
+      max-width: 700px;
+    }
   }
   .formContainer {
     position: absolute;
@@ -36,6 +46,10 @@
     height: fit-content;
     padding: 2rem;
     @include textBox;
+    @include screen-mobile-lg {
+      max-width: 550px;
+      top: 40vw;
+    }
     .subText {
       font-size: 1.8rem;
       line-height: 2.8rem;

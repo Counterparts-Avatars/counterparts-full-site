@@ -13,8 +13,8 @@ import logoMark from '@/public/counterparts-logo-mark.svg';
 import styles from './Portal.module.scss';
 
 interface PortalProps {
-  width?: number;
-  maxWidth?: number;
+  width?: number | string;
+  maxWidth?: number | string;
   rotationDirection: 'clockwise' | 'counterclockwise';
   scrollAnimation: boolean;
   logo: boolean;

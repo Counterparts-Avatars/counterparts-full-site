@@ -3,14 +3,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useWindowSize } from 'usehooks-ts';
 
 import createAnimation from '@/helpers/createAnimation';
 import socials from '@/content/socials';
 import logo from '@/public/counterparts-logo.svg';
-import styles from './Footer.module.scss';
 import navLinks from '@/content/nav-links';
+import styles from './Footer.module.scss';
 
 const Footer = () => {
+  const { width } = useWindowSize();
+
   return (
     <div className={styles.footerBox}>
       <motion.footer

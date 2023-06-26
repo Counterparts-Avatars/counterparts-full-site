@@ -34,6 +34,12 @@
       justify-content: space-between;
       align-items: center;
       margin: auto;
+      .socialIcon {
+        @include screen-mobile-lg {
+          width: 10vw;
+          height: 10vw;
+        }
+      }
     }
     .copyright {
       filter: opacity(0.75);

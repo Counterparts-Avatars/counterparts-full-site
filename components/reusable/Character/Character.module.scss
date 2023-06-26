@@ -1,17 +1,26 @@
 @import '/styles/sass/animations';
+@import '/styles/sass/mixins';
 
 .characterBox {
   position: relative;
   --width: 30rem;
   width: var(--width);
   height: calc(var(--width) * 1.2);
+  margin: 0 auto;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
+  padding: 0 1%;
+  @include screen-mobile-lg {
+    --width: 35rem;
+  }
   .character {
     object-fit: contain;
     z-index: 1;
     transform: translateY(-3%);
+    @include screen-mobile-lg {
+      transform: translateY(0);
+    }
   }
   .portalBox {
     position: relative;
@@ -20,7 +29,7 @@
     .portal {
       object-fit: contain;
       filter: opacity(0.95);
-      animation: rotateClockwise 60s linear infinite;
+      animation: rotateClockwise 30s linear infinite;
       @media (prefers-reduced-motion) {
         animation: none;
       }
