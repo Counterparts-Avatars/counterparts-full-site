@@ -10,6 +10,9 @@
     color: rgba($color-light, 0.5);
     font-size: 1.6rem;
     z-index: -1;
+    @include screen-tablet-sm {
+      font-size: 2.4rem;
+    }
   }
   .emailInput {
     border: 1px solid $color-light;
@@ -19,6 +22,9 @@
     padding: 1rem;
     border-radius: $btn-border-radius 0 0 $btn-border-radius;
     background-color: rgba($color-dark, 0.4);
+    @include screen-tablet-sm {
+      font-size: 2.4rem;
+    }
     &.errorInput {
       color: $color-accent;
       border: 1px solid $color-accent;
@@ -39,6 +45,9 @@
     filter: opacity(0.8);
     border-radius: 0 $btn-border-radius $btn-border-radius 0;
     transition: all 0.3s;
+    @include screen-tablet-sm {
+      font-size: 2.4rem;
+    }
     &.errorBtn {
       border: 1px solid $color-accent;
       background-color: $color-accent;

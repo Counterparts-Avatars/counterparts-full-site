@@ -49,7 +49,7 @@ const SplinePortal = ({ position, scale, width }: SplinePortalProps) => {
         />
       }>
       <Spline
-        scene={windowWidth > breakpoints.med ? splineUrl : splineUrlMobile}
+        scene={windowWidth >= breakpoints.large ? splineUrl : splineUrlMobile}
         style={{
           position: 'absolute',
           zIndex: -100,

@@ -13,13 +13,13 @@ import styles from './NavExpanded.module.scss';
 interface NavExpandedProps {
   displayMobileMenu: boolean;
   setDisplayMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  activePage: number;
 }
-
-const active = 0; //replace with active nav state
 
 const NavExpanded = ({
   displayMobileMenu,
   setDisplayMobileMenu,
+  activePage,
 }: NavExpandedProps) => {
   return (
     <motion.div
@@ -70,7 +70,7 @@ const NavExpanded = ({
                 href={link.path}
                 onClick={() => setDisplayMobileMenu(false)}
                 className={
-                  active === i
+                  activePage === i
                     ? `${styles.link} ${styles.link__active}`
                     : styles.link
                 }>

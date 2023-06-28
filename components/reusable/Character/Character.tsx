@@ -37,7 +37,7 @@ const Character = ({
   } else if (!scrollAnimation) {
     degrees = 0;
   }
-  const rotation = useTransform(scrollY, [0, 1500], [0, degrees], {
+  const rotation = useTransform(scrollY, [0, 4000], [0, degrees], {
     clamp: false,
   });
 

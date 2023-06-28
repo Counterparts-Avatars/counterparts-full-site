@@ -14,11 +14,17 @@
     padding-top: 5rem;
     border-top: 1px solid rgba($color-light, 0.5);
     gap: 3rem;
+    @include screen-mobile-lg {
+      gap: 4rem;
+    }
     .logoLink {
       text-align: center;
       .logo {
         width: 80%;
         height: auto;
+        @include screen-mobile-lg {
+          max-width: 45rem;
+        }
       }
     }
     .navLinks {
@@ -27,6 +33,9 @@
       justify-content: center;
       font-size: 1.6rem;
       filter: opacity(0.95);
+      @include screen-mobile-lg {
+        font-size: 1.8rem;
+      }
     }
     .socials {
       width: 70%;
@@ -37,13 +46,18 @@
       .socialIcon {
         @include screen-mobile-lg {
           width: 10vw;
+          max-width: 4rem;
           height: 10vw;
+          max-height: 4rem;
         }
       }
     }
     .copyright {
       filter: opacity(0.75);
       margin-bottom: 1rem;
+      @include screen-mobile-lg {
+        font-size: 1.4rem;
+      }
     }
   }
 }

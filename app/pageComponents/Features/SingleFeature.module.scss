@@ -5,6 +5,9 @@
   height: 30rem;
   margin: 10rem 0;
   position: relative;
+  @include screen-tablet-sm {
+    margin-bottom: 40vw;
+  }
   .gridBox {
     position: absolute;
     width: 100vw;
@@ -17,6 +20,10 @@
     }
     @include screen-mobile-lg {
       top: 20vw;
+    }
+    @include screen-tablet-sm {
+      top: 26.5vw;
+      height: 95%;
     }
     .grid {
       object-fit: cover;
@@ -55,11 +62,20 @@
       width: 70%;
       top: 35vw;
     }
+    @include screen-tablet-sm {
+      padding: 2rem;
+      font-size: 4vw;
+      line-height: 6vw;
+      width: 55%;
+    }
   }
   .characterBox {
     position: absolute;
     z-index: 1;
     top: 5rem;
+    @include screen-tablet-sm {
+      top: 8rem;
+    }
   }
   .portalBox {
     position: absolute;
@@ -69,9 +85,17 @@
     }
     .text {
       left: 0;
+      @include screen-tablet-sm {
+        left: unset;
+        right: 0;
+      }
     }
     .characterBox {
       right: 0;
+      @include screen-tablet-sm {
+        right: unset;
+        left: 0;
+      }
     }
     .portalBox {
       top: 66%;
@@ -80,6 +104,18 @@
         left: 7vw;
         top: 50vw;
       }
+      @include screen-tablet-sm {
+        &:nth-of-type(1) {
+          left: unset;
+          right: 18vw;
+          top: 25vw;
+        }
+        &:nth-of-type(2) {
+          left: unset;
+          right: 10vw;
+          top: 50vw;
+        }
+      }
     }
   }
   &.featureBox__left {
@@ -87,9 +123,17 @@
     }
     .text {
       right: 0;
+      @include screen-tablet-sm {
+        right: unset;
+        left: 0;
+      }
     }
     .characterBox {
       left: 0;
+      @include screen-tablet-sm {
+        left: unset;
+        right: 0;
+      }
     }
     .portalBox {
       top: 35%;
@@ -97,6 +141,18 @@
       @include screen-mobile-lg {
         right: 7vw;
         top: 25vw;
+      }
+      @include screen-tablet-sm {
+        &:nth-of-type(1) {
+          right: unset;
+          left: 18vw;
+          top: 25vw;
+        }
+        &:nth-of-type(2) {
+          right: unset;
+          left: 10vw;
+          top: 50vw;
+        }
       }
     }
   }

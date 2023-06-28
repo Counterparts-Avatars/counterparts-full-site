@@ -57,6 +57,10 @@ footer {
     margin: 0 calc($page-margin-small / 2);
     width: calc(100vw - $page-margin-small);
   }
+  @include screen-desktop-sm {
+    margin: 0 calc($page-margin-large / 2);
+    width: calc(100vw - $page-margin-large);
+  }
 }
 
 button {

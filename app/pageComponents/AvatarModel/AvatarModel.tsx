@@ -28,19 +28,19 @@ const AvatarModel = () => {
     portalScale = 0.5;
     topPortalTranslateY = '5%';
     bottomPortalTranslateY = '88%';
-  } else if (width <= breakpoints.small && width >= breakpoints.xsmall) {
+  } else if (width < breakpoints.small && width >= breakpoints.xsmall) {
     portalScale = 0.6;
     topPortalTranslateY = '5%';
     bottomPortalTranslateY = '75%';
-  } else if (width <= breakpoints.med && width >= breakpoints.small) {
+  } else if (width < breakpoints.med && width >= breakpoints.small) {
     portalScale = 0.8;
     topPortalTranslateY = '10%';
     bottomPortalTranslateY = '55%';
-  } else if (width <= breakpoints.large && width >= breakpoints.med) {
-    portalScale = 0.6;
-    topPortalTranslateY = '-5%';
-    bottomPortalTranslateY = '75%';
-  } else if (width <= breakpoints.xlarge && width >= breakpoints.large) {
+  } else if (width < breakpoints.large && width >= breakpoints.med) {
+    portalScale = 0.8;
+    topPortalTranslateY = '25%';
+    bottomPortalTranslateY = '50%';
+  } else if (width < breakpoints.xlarge && width >= breakpoints.large) {
     portalScale = 0.6;
     topPortalTranslateY = '5%';
     bottomPortalTranslateY = '75%';

@@ -1,4 +1,5 @@
 @import '/styles/sass/animations';
+@import '/styles/sass/mixins';
 
 .portalBox {
   position: relative;
@@ -14,6 +15,9 @@
       animation: rotateClockwise 15s linear infinite;
       @media (prefers-reduced-motion) {
         animation: none;
+      }
+      @include screen-mobile-lg {
+        animation-duration: 22s;
       }
     }
   }

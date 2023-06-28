@@ -89,7 +89,7 @@ export default function createAnimation(
         translateY: 0,
         scale: 1.3,
         transition: {
-          duration: 0.5,
+          duration: 0.8,
           ease: 'easeOut',
         },
       },

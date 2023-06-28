@@ -4,8 +4,10 @@ import { useWindowSize } from 'usehooks-ts';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
+import navLinks from '@/content/nav-links';
 import { breakpoints } from '@/helpers/breakpoints';
 import Hamburger from '@/components/reusable/Hamburger/Hamburger';
 import NavExpanded from './NavExpanded';
@@ -13,15 +15,44 @@ import createAnimation from '@/helpers/createAnimation';
 import styles from './Navbar.module.scss';
 
 const Navbar = () => {
+  const pathname = usePathname();
+  const [activePage, setActivePage] = useState(0);
   const { width } = useWindowSize();
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    const position = scrollY;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    switch (pathname) {
+      case '/':
+        setActivePage(0);
+        break;
+      case '/about':
+        setActivePage(1);
+        break;
+      default:
+        setActivePage(0);
+        break;
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [pathname]);
 
   return (
     <>
-      {width <= breakpoints.med && (
+      {width < breakpoints.med && (
         <NavExpanded
           displayMobileMenu={displayMobileMenu}
           setDisplayMobileMenu={setDisplayMobileMenu}
+          activePage={activePage}
         />
       )}
       <motion.div
@@ -37,12 +68,16 @@ const Navbar = () => {
         })}
         style={displayMobileMenu ? { boxShadow: 'none' } : {}}
         className={
-          width > breakpoints.med
-            ? styles.navBox
+          width >= breakpoints.med
+            ? scrollPosition < 50
+              ? styles.navBox
+              : `${styles.navBox} ${styles.navBox__scrolled}`
             : `${styles.navBox} ${styles.navBox__mobile}`
         }>
         <nav className={styles.innerNav}>
-          <Link href="/">
+          <Link
+            href="/"
+            className={styles.logoLink}>
             <Image
               src="/counterparts-logo.svg"
               alt="Counterparts logo"
@@ -52,8 +87,23 @@ const Navbar = () => {
               onClick={() => setDisplayMobileMenu(false)}
             />
           </Link>
-          {width > breakpoints.med ? (
-            <ul className={styles.navLinks}></ul>
+          {width >= breakpoints.med ? (
+            <ul className={styles.navLinks}>
+              {navLinks.map(
+                (navLink, i) =>
+                  navLink.name !== 'Home' && (
+                    <li
+                      key={i}
+                      className={
+                        activePage === i
+                          ? `${styles.link} ${styles.link__active}`
+                          : styles.link
+                      }>
+                      <Link href={navLink.path}>{navLink.name}</Link>
+                    </li>
+                  )
+              )}
+            </ul>
           ) : (
             <Hamburger
               currentState={displayMobileMenu}

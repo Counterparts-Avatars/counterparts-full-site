@@ -37,7 +37,7 @@ const Portal = ({
   } else if (!scrollAnimation) {
     degrees = 0;
   }
-  const rotation = useTransform(scrollY, [0, 1500], [0, degrees], {
+  const rotation = useTransform(scrollY, [0, 3500], [0, degrees], {
     clamp: false,
   });
 

@@ -3,9 +3,12 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useWindowSize } from 'usehooks-ts';
+import { useEffect, useState } from 'react';
 
 import createAnimation from '@/helpers/createAnimation';
 import character1 from '@/public/character-1.webp';
+import character7 from '@/public/character-7.webp';
+import character8 from '@/public/character-8.webp';
 import grid from '@/public/grid.svg';
 import arrow from '@/public/arrow.svg';
 import Character from '@/components/reusable/Character/Character';
@@ -14,6 +17,26 @@ import styles from './Hero.module.scss';
 
 const Hero = () => {
   const { width } = useWindowSize();
+  const [characterRootSize, setCharacterRootSize] = useState<
+    number | undefined
+  >();
+
+  useEffect(() => {
+    switch (true) {
+      case width < breakpoints.small:
+        setCharacterRootSize(undefined);
+        break;
+      case width < breakpoints.med && width >= breakpoints.small:
+        setCharacterRootSize(500);
+        break;
+      case width < breakpoints.large && width >= breakpoints.med:
+        setCharacterRootSize(width * 0.35);
+        break;
+      case width < breakpoints.xlarge && width >= breakpoints.large:
+        setCharacterRootSize(undefined);
+        break;
+    }
+  }, [width]);
 
   const scrollToPos = () => {
     const yOffset = -100;
@@ -25,19 +48,12 @@ const Hero = () => {
   return (
     <section className={styles.heroSection}>
       <motion.div
-        variants={
-          width > breakpoints.med
-            ? createAnimation('staggerContainer')
-            : createAnimation('fadeIn')
-        }
+        variants={createAnimation('staggerContainer')}
         initial="hidden"
-        animate="show">
+        animate="show"
+        className={styles.heroText}>
         <motion.div
-          variants={
-            width > breakpoints.med
-              ? createAnimation('fadeInScale')
-              : createAnimation('fadeIn')
-          }
+          variants={createAnimation('fadeInScale')}
           className={styles.gridBox}>
           <Image
             src={grid}
@@ -73,18 +89,62 @@ const Hero = () => {
             <Image
               src={arrow}
               alt=""
-              width={25}
-              height={25}
+              width={width >= breakpoints.small ? 35 : 25}
+              height={width >= breakpoints.small ? 35 : 25}
             />
           </span>
         </motion.button>
-        <Character
-          rotationDirection="clockwise"
-          character={character1}
-          scrollAnimation={width > breakpoints.med}
-          width={width > breakpoints.small ? 500 : undefined}
-          maxWidth={width > breakpoints.small ? 500 : undefined}
-        />
+      </motion.div>
+      <motion.div
+        variants={createAnimation('staggerContainer')}
+        initial="hidden"
+        animate="show"
+        className={styles.characterBox}>
+        <motion.div
+          className={styles.characterWrapper}
+          variants={createAnimation('fadeIn')}>
+          <Character
+            rotationDirection="clockwise"
+            character={character1}
+            scrollAnimation={width >= breakpoints.med}
+            width={characterRootSize}
+            maxWidth={characterRootSize}
+          />
+        </motion.div>
+        {width >= breakpoints.med && (
+          <motion.div
+            className={styles.characterWrapper}
+            variants={createAnimation('fadeIn')}>
+            <Character
+              rotationDirection="counterclockwise"
+              character={character8}
+              scrollAnimation={width >= breakpoints.med}
+              width={
+                characterRootSize ? characterRootSize * 0.6 : characterRootSize
+              }
+              maxWidth={
+                characterRootSize ? characterRootSize * 0.6 : characterRootSize
+              }
+            />
+          </motion.div>
+        )}
+        {width >= breakpoints.large && (
+          <motion.div
+            className={styles.characterWrapper}
+            variants={createAnimation('fadeIn')}>
+            <Character
+              rotationDirection="counterclockwise"
+              character={character7}
+              scrollAnimation={width >= breakpoints.med}
+              width={
+                characterRootSize ? characterRootSize * 0.6 : characterRootSize
+              }
+              maxWidth={
+                characterRootSize ? characterRootSize * 0.6 : characterRootSize
+              }
+            />
+          </motion.div>
+        )}
       </motion.div>
     </section>
   );

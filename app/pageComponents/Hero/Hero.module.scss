@@ -7,15 +7,27 @@
   --gap: 2rem;
   text-align: center;
   @include sectionInit;
+  @include screen-tablet-sm {
+    flex-direction: row;
+    --gap: 1rem;
+    gap: 2rem;
+    height: 50rem;
+    margin-top: 7%;
+    text-align: left;
+  }
   .gridBox {
     position: absolute;
     width: 100vw;
     height: 45%;
-    top: 60%;
+    top: 65%;
     z-index: -10;
     left: -$page-margin-xsmall / 2;
     @include screen-mobile-sm {
       left: -$page-margin-small / 2;
+    }
+    @include screen-tablet-sm {
+      height: 60%;
+      top: 53%;
     }
     .grid {
       object-fit: cover;
@@ -23,40 +35,83 @@
       filter: opacity(0.25);
     }
   }
-  .head {
-    font-weight: 300;
-    font-size: 4rem;
-    margin: var(--gap) 0;
-    @include screen-mobile-lg {
-      font-size: 11vw;
-    }
-    .subHead {
-      font-weight: 600;
-      font-size: 4.3rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+  .heroText {
+    .head {
+      font-weight: 300;
+      font-size: 4rem;
+      margin: var(--gap) 0;
       @include screen-mobile-lg {
-        font-size: 12vw;
+        font-size: 11vw;
+      }
+      @include screen-tablet-sm {
+        font-size: 7vw;
+      }
+      .subHead {
+        font-weight: 600;
+        font-size: 4.3rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        @include screen-mobile-lg {
+          font-size: 12vw;
+        }
+        @include screen-tablet-sm {
+          font-size: 7.5vw;
+          letter-spacing: 1px;
+        }
+      }
+    }
+    .description {
+      font-size: 1.9rem;
+      line-height: 2.7rem;
+      @include screen-mobile-lg {
+        font-size: 5vw;
+        line-height: 6.3vw;
+      }
+      @include screen-tablet-sm {
+        font-size: 3.2vw;
+        line-height: 4.8vw;
+      }
+    }
+    .mainBtn {
+      @include mainBtn;
+      width: 20rem;
+      position: absolute;
+      bottom: 25%;
+      left: 50%;
+      translate: -50%;
+      @include screen-mobile-lg {
+        bottom: 20%;
+      }
+      @include screen-tablet-sm {
+        position: relative;
+        left: unset;
+        translate: none;
+        margin-top: 1rem;
+        margin-left: 0;
+        width: fit-content;
+        padding: 1.5rem 2rem;
       }
     }
   }
-  .description {
-    font-size: 1.9rem;
-    line-height: 2.7rem;
-    @include screen-mobile-lg {
-      font-size: 5vw;
-      line-height: 6.3vw;
+  .characterBox {
+    display: flex;
+    align-items: flex-end;
+    .characterWrapper {
+      &:nth-child(1) {
+        @include screen-tablet-sm {
+          transform: translate(-5%, 0%);
+        }
+      }
+      &:nth-child(2) {
+        transform: translate(-40%, 50%);
+      }
+      &:nth-child(3) {
+      }
     }
-  }
-  .mainBtn {
-    @include mainBtn;
-    width: 20rem;
-    position: absolute;
-    bottom: 25%;
-    left: 50%;
-    translate: -50%;
-    @include screen-mobile-lg {
-      bottom: 20%;
+    @include screen-tablet-sm {
+      width: 43%;
+      align-self: flex-start;
+      margin-top: 7rem;
     }
   }
 }

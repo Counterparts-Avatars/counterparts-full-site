@@ -9,7 +9,10 @@
   margin-top: 15rem;
   @include screen-mobile-lg {
     height: 40rem;
-    margin-bottom: 10vw;
+    margin-bottom: 15vw;
+  }
+  @include screen-tablet-sm {
+    margin-bottom: 20vw;
   }
   .actionHead {
     font-size: 4.5rem;
@@ -29,7 +32,7 @@
     width: 100vw;
     height: auto;
     @include screen-mobile-lg {
-      max-width: 700px;
+      max-width: 725px;
     }
   }
   .formContainer {
@@ -50,9 +53,18 @@
       max-width: 550px;
       top: 40vw;
     }
+    @include screen-tablet-sm {
+      max-width: 650px;
+      top: 25rem;
+      padding: 2.5rem;
+    }
     .subText {
       font-size: 1.8rem;
       line-height: 2.8rem;
+      @include screen-tablet-sm {
+        font-size: 2.8rem;
+        line-height: 4.2rem;
+      }
       .part {
         color: $color-light;
       }

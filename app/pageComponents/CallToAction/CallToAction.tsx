@@ -45,7 +45,7 @@ const CallToAction = () => {
           width={width * 0.55}
           maxWidth={width * 0.55}
           rotationDirection="clockwise"
-          scrollAnimation={width > breakpoints.med}
+          scrollAnimation={width >= breakpoints.med}
           logo
         />
       </motion.div>

@@ -30,6 +30,9 @@
       @media (prefers-reduced-motion) {
         animation: none;
       }
+      @include screen-mobile-lg {
+        animation-duration: 45s;
+      }
     }
   }
 }

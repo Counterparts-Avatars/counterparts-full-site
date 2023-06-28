@@ -32,6 +32,21 @@
       '. . shoes shoes shoes'
       '. . . . .';
   }
+  @include screen-tablet-sm {
+    grid-template-areas:
+      'glasses glasses . . .'
+      '. . . . .'
+      '. . . . .'
+      '. . . jacket jacket'
+      '. . . . .'
+      '. . . . .'
+      'pants pants . . .'
+      '. . . . .'
+      '. . . shoes shoes'
+      '. . . . .';
+    --height: 70rem;
+    margin: 15rem 0;
+  }
   .portal {
     position: absolute;
     object-fit: contain;
@@ -60,12 +75,21 @@
       font-size: 1.8rem;
       line-height: 2.8rem;
     }
+    @include screen-tablet-sm {
+      font-size: 2.4rem;
+      line-height: 3.4rem;
+      padding: 2rem 1.5rem;
+    }
     .callOutTitle {
       display: block;
       font-size: 2rem;
       font-weight: 500;
       color: $color-light;
       text-transform: uppercase;
+      @include screen-tablet-sm {
+        font-size: 2.8rem;
+        line-height: 3.8rem;
+      }
     }
     &:nth-of-type(1) {
       grid-area: glasses;
