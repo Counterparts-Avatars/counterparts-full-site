@@ -39,7 +39,7 @@ const Hero = () => {
   }, [width]);
 
   const scrollToPos = () => {
-    const yOffset = -100;
+    const yOffset = 0;
     const element = document.getElementById('call-to-action');
     const y = element!.getBoundingClientRect().top + scrollY + yOffset;
     window.scrollTo({ top: y, behavior: 'smooth' });

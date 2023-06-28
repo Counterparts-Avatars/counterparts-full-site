@@ -25,7 +25,7 @@ const CallToAction = () => {
       variants={createAnimation('staggerContainer')}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.6 }}>
+      viewport={{ once: true, amount: 0.8 }}>
       <motion.h3
         variants={createAnimation('fadeInDown')}
         className={styles.actionHead}>
@@ -43,7 +43,7 @@ const CallToAction = () => {
         className={styles.portalBox}>
         <Portal
           width={width * 0.55}
-          maxWidth={width * 0.55}
+          maxWidth={500}
           rotationDirection="clockwise"
           scrollAnimation={width >= breakpoints.med}
           logo
