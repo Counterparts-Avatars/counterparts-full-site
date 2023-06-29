@@ -15,7 +15,7 @@ import styles from './Portal.module.scss';
 interface PortalProps {
   width?: number;
   maxWidth?: number;
-  rotationDirection: 'clockwise' | 'counterclockwise';
+  rotationDirection: 'clockwise' | 'counterclockwise' | 'none';
   scrollAnimation: boolean;
   logo: boolean;
 }
@@ -36,6 +36,8 @@ const Portal = ({
     degrees = -360;
   } else if (!scrollAnimation) {
     degrees = 0;
+  } else {
+    degrees = 360;
   }
   const rotation = useTransform(scrollY, [0, 3500], [0, degrees], {
     clamp: false,
@@ -76,7 +78,9 @@ const Portal = ({
           sizes={width ? width.toString() : '50vw'}
           className={styles.portal}
           style={
-            rotationDirection === 'counterclockwise'
+            rotationDirection === 'none'
+              ? { animation: 'none' }
+              : rotationDirection === 'counterclockwise'
               ? { animationDirection: 'reverse' }
               : {}
           }

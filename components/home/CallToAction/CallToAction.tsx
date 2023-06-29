@@ -39,7 +39,7 @@ const CallToAction = () => {
           <Portal
             width={width * 0.55}
             maxWidth={500}
-            rotationDirection="clockwise"
+            rotationDirection="none"
             scrollAnimation={width >= breakpoints.med}
             logo
           />
