@@ -14,7 +14,7 @@
     @include screen-tablet-sm {
       width: 90%;
     }
-    @include screen-desktop-sm {
+    @include screen-tablet-lg {
       width: 80%;
       max-width: 1000px;
     }
@@ -44,9 +44,7 @@
     @include screen-tablet-lg {
       font-size: 4rem;
       line-height: 5.5rem;
-      padding: 0 5rem;
-    }
-    @include screen-desktop-sm {
+      padding: 0;
       width: 80%;
       max-width: 1000px;
     }

@@ -5,6 +5,10 @@
   height: 30rem;
   margin: 10rem 0;
   position: relative;
+  @include screen-mobile-lg {
+    height: 40rem;
+    margin: 15vw 0;
+  }
   @include screen-tablet-sm {
     height: 60rem;
   }
@@ -141,7 +145,7 @@
         left: 7%;
       }
       @include screen-desktop-sm {
-        left: 17rem;
+        left: 16rem;
       }
     }
     .portalBox {
@@ -220,7 +224,7 @@
         right: 7%;
       }
       @include screen-desktop-sm {
-        right: 17rem;
+        right: 16rem;
       }
     }
     .portalBox {

@@ -126,8 +126,8 @@ const NavExpanded = ({
                 <Image
                   src={social.icon}
                   alt={social.name}
-                  width={40}
-                  height={40}
+                  width={45}
+                  height={45}
                   className={styles.socialIcon}
                 />
               </Link>
