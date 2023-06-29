@@ -40,7 +40,7 @@ const CallToAction = () => {
             movementVector: { x: 0, y: 0 },
             timingFunction: 'linear',
             opacity: { start: 0, end: 0.5 },
-            scale: { start: 1, end: 1.3 },
+            scale: { start: 1.15, end: 1.3 },
           })}
           className={styles.portalBox}>
           <Portal
