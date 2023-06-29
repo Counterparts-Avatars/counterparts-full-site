@@ -14,11 +14,11 @@ const socials = [
     href: 'https://www.twitter.com/',
     icon: twitter,
   },
-  {
-    name: 'Discord',
-    href: 'https://www.discord.com/',
-    icon: discord,
-  },
+  // {
+  //   name: 'Discord',
+  //   href: 'https://www.discord.com/',
+  //   icon: discord,
+  // },
   {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/',

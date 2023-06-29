@@ -20,7 +20,7 @@ const CallToAction = () => {
 
   return (
     <section
-      id="call-to-action"
+      id="be-the-first"
       className={styles.actionSection}>
       <motion.div
         variants={createAnimation('staggerContainer')}

@@ -60,10 +60,10 @@
         &.link__active {
           color: $color-light;
         }
-        &:hover {
-          color: $color-light;
-          filter: opacity(0.85);
-        }
+        // &:hover {
+        //   color: $color-light;
+        //   filter: opacity(0.85);
+        // }
         &:last-of-type {
           @include mainBtn;
           font-size: calc(1.8rem * var(--scroll-ratio));
