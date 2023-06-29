@@ -52,7 +52,7 @@ const Character = ({
         width && maxWidth
           ? {
               width: width,
-              height: width * 1.2,
+              height: Math.min(width, maxWidth) * 1.2,
               maxWidth: maxWidth,
             }
           : {} // if width and maxWidth are given, set the width and height of the character to the width prop and the maxWidth prop, respectively
@@ -73,7 +73,7 @@ const Character = ({
           width && maxWidth
             ? {
                 width: width,
-                height: width, // portal remains square
+                height: Math.min(width, maxWidth), // portal remains square
                 maxWidth: maxWidth,
                 rotate: rotation,
               }

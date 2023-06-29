@@ -10,7 +10,6 @@ import Character from '@/components/reusable/Character/Character';
 import Portal from '@/components/reusable/Portal/Portal';
 import { breakpoints } from '@/helpers/breakpoints';
 import styles from './SingleFeature.module.scss';
-import { useEffect, useState } from 'react';
 
 interface SingleFeatureProps {
   index: number;
@@ -26,26 +25,6 @@ const SingleFeature = ({
   character,
 }: SingleFeatureProps) => {
   const { width } = useWindowSize();
-  const [characterRootSize, setCharacterRootSize] = useState<
-    number | undefined
-  >();
-
-  useEffect(() => {
-    switch (true) {
-      case width < breakpoints.small:
-        setCharacterRootSize(width * 0.55);
-        break;
-      case width < breakpoints.med && width >= breakpoints.small:
-        setCharacterRootSize(width * 0.55);
-        break;
-      case width < breakpoints.large && width >= breakpoints.med:
-        setCharacterRootSize(width * 0.55);
-        break;
-      case width < breakpoints.xlarge && width >= breakpoints.large:
-        setCharacterRootSize(undefined);
-        break;
-    }
-  }, [width]);
 
   return (
     <motion.div
@@ -61,7 +40,7 @@ const SingleFeature = ({
       }
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.75 }}>
+      viewport={{ once: true, amount: 0.4 }}>
       <motion.div
         variants={
           width >= breakpoints.med
@@ -78,11 +57,7 @@ const SingleFeature = ({
         />
       </motion.div>
       <motion.h3
-        variants={
-          width >= breakpoints.med
-            ? createAnimation('fadeInDown')
-            : createAnimation('fadeIn')
-        }
+        variants={createAnimation('fadeInDown')}
         className={styles.head}>
         {head}
       </motion.h3>
@@ -95,7 +70,7 @@ const SingleFeature = ({
         className={styles.characterBox}>
         <Character
           width={width * 0.55}
-          maxWidth={width * 0.55}
+          maxWidth={500}
           rotationDirection={index % 2 === 0 ? 'counterclockwise' : 'clockwise'}
           scrollAnimation={width >= breakpoints.med}
           character={character}
@@ -110,7 +85,7 @@ const SingleFeature = ({
         className={styles.portalBox}>
         <Portal
           width={width * 0.2}
-          maxWidth={width * 0.2}
+          maxWidth={180}
           rotationDirection={index % 2 === 0 ? 'clockwise' : 'counterclockwise'}
           scrollAnimation={width >= breakpoints.med}
           logo={false}
@@ -126,9 +101,15 @@ const SingleFeature = ({
           className={styles.portalBox}>
           <Portal
             width={width * 0.25}
-            maxWidth={width * 0.25}
+            maxWidth={230}
             rotationDirection={
-              index % 2 === 0 ? 'counterclockwise' : 'clockwise'
+              index % 2 === 0
+                ? width >= breakpoints.xlarge
+                  ? 'clockwise'
+                  : 'counterclockwise'
+                : width >= breakpoints.xlarge
+                ? 'counterclockwise'
+                : 'clockwise'
             }
             scrollAnimation={width >= breakpoints.med}
             logo={true}

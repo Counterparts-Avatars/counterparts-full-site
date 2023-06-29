@@ -14,6 +14,7 @@
     padding-top: 5rem;
     border-top: 1px solid rgba($color-light, 0.5);
     gap: 3rem;
+    margin: auto;
     @include screen-mobile-lg {
       gap: 4rem;
     }
@@ -30,6 +31,7 @@
     .navLinks {
       display: flex;
       width: 100%;
+      max-width: 800px;
       justify-content: center;
       font-size: 1.6rem;
       filter: opacity(0.95);
@@ -39,6 +41,7 @@
     }
     .socials {
       width: 70%;
+      max-width: 600px;
       display: flex;
       justify-content: space-between;
       align-items: center;

@@ -1,11 +1,11 @@
 import Image from 'next/image';
 
 import radial from '@/public/radial.svg';
-import Hero from '@/app/pageComponents/Hero/Hero';
+import Hero from '@/components/home/Hero/Hero';
 import HoloText from '@/components/reusable/HoloText/HoloText';
-import Features from '@/app/pageComponents/Features/Features';
-import AvatarModel from '@/app/pageComponents/AvatarModel/AvatarModel';
-import CallToAction from '@/app/pageComponents/CallToAction/CallToAction';
+import Features from '@/components/home/Features/Features';
+import AvatarModel from '@/components/home/AvatarModel/AvatarModel';
+import CallToAction from '@/components/home/CallToAction/CallToAction';
 
 export default function Home() {
   return (

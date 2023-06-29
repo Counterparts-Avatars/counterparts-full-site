@@ -15,9 +15,14 @@
     margin-top: 7%;
     text-align: left;
   }
+  @include screen-desktop-sm {
+    margin-top: $navbar-height;
+    margin-bottom: 20rem;
+  }
   .gridBox {
     position: absolute;
-    width: 100vw;
+    width: calc(100% + 2 * $page-margin-large);
+    max-width: 1600px;
     height: 45%;
     top: 65%;
     z-index: -10;
@@ -29,10 +34,20 @@
       height: 60%;
       top: 53%;
     }
+    @include screen-desktop-sm {
+      top: 28rem;
+      left: -$page-margin-large / 2;
+    }
+    @include screen-desktop-lg {
+      top: 26rem;
+    }
     .grid {
       object-fit: cover;
       object-position: center;
-      filter: opacity(0.25);
+      filter: opacity(0.2);
+      @include screen-desktop-lg {
+        object-fit: contain;
+      }
     }
   }
   .heroText {
@@ -46,6 +61,9 @@
       @include screen-tablet-sm {
         font-size: 7vw;
       }
+      @include screen-desktop-sm {
+        font-size: 6.4rem;
+      }
       .subHead {
         font-weight: 600;
         font-size: 4.3rem;
@@ -57,6 +75,9 @@
         @include screen-tablet-sm {
           font-size: 7.5vw;
           letter-spacing: 1px;
+        }
+        @include screen-desktop-sm {
+          font-size: 7rem;
         }
       }
     }
@@ -70,6 +91,10 @@
       @include screen-tablet-sm {
         font-size: 3.2vw;
         line-height: 4.8vw;
+      }
+      @include screen-desktop-sm {
+        font-size: 2.9rem;
+        line-height: 4rem;
       }
     }
     .mainBtn {
@@ -101,11 +126,20 @@
         @include screen-tablet-sm {
           transform: translate(-5%, 0%);
         }
+        @include screen-tablet-lg {
+          transform: translate(40%, -20%);
+        }
       }
       &:nth-child(2) {
         transform: translate(-40%, 50%);
+        @include screen-tablet-lg {
+          transform: translate(-160%, 20%);
+        }
       }
       &:nth-child(3) {
+        @include screen-tablet-lg {
+          transform: translate(-110%, 55%);
+        }
       }
     }
     @include screen-tablet-sm {

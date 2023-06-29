@@ -6,29 +6,42 @@
   margin: 10rem 0;
   position: relative;
   @include screen-tablet-sm {
-    margin-bottom: 40vw;
+    height: 60rem;
   }
   .gridBox {
     position: absolute;
-    width: 100vw;
+    width: calc(100% + 2 * $page-margin-large);
+    max-width: 1600px;
     height: 90%;
-    top: 7rem;
+    top: 23%;
     z-index: -10;
     left: -$page-margin-xsmall / 2;
     @include screen-mobile-sm {
       left: -$page-margin-small / 2;
     }
     @include screen-mobile-lg {
-      top: 20vw;
+      top: 19vw;
     }
     @include screen-tablet-sm {
-      top: 26.5vw;
-      height: 95%;
+      height: 50%;
+      top: calc(5rem + 18vw);
+    }
+    @include screen-tablet-lg {
+      top: 32%;
+    }
+    @include screen-desktop-sm {
+      left: -$page-margin-large / 2;
+    }
+    @include screen-desktop-lg {
+      top: 18rem;
     }
     .grid {
       object-fit: cover;
       object-position: center;
-      filter: opacity(0.25);
+      filter: opacity(0.2);
+      @include screen-desktop-lg {
+        object-fit: contain;
+      }
     }
   }
   .head {
@@ -45,6 +58,9 @@
     color: transparent;
     @include screen-mobile-lg {
       font-size: 18vw;
+    }
+    @include screen-tablet-lg {
+      font-size: 14rem;
     }
   }
   .text {
@@ -68,13 +84,25 @@
       line-height: 6vw;
       width: 55%;
     }
+    @include screen-tablet-lg {
+      font-size: 3rem;
+      line-height: 4.5rem;
+      width: 40rem;
+      top: 25rem;
+    }
   }
   .characterBox {
     position: absolute;
     z-index: 1;
     top: 5rem;
+    @include screen-mobile-lg {
+      top: 14vw;
+    }
     @include screen-tablet-sm {
       top: 8rem;
+    }
+    @include screen-tablet-lg {
+      top: 11rem;
     }
   }
   .portalBox {
@@ -82,6 +110,12 @@
   }
   &.featureBox__right {
     .head {
+      @include screen-tablet-lg {
+        text-align: right;
+      }
+      @include screen-desktop-sm {
+        padding-right: 5%;
+      }
     }
     .text {
       left: 0;
@@ -89,12 +123,25 @@
         left: unset;
         right: 0;
       }
+      @include screen-tablet-lg {
+        right: unset;
+        left: 35%;
+      }
+      @include screen-desktop-sm {
+        left: 50%;
+      }
     }
     .characterBox {
       right: 0;
       @include screen-tablet-sm {
         right: unset;
         left: 0;
+      }
+      @include screen-tablet-lg {
+        left: 7%;
+      }
+      @include screen-desktop-sm {
+        left: 17rem;
       }
     }
     .portalBox {
@@ -116,10 +163,38 @@
           top: 50vw;
         }
       }
+      @include screen-tablet-lg {
+        &:nth-of-type(1) {
+          left: 40rem;
+          right: unset;
+          top: 15rem;
+        }
+        &:nth-of-type(2) {
+          left: 45rem;
+          right: unset;
+          top: 35rem;
+        }
+      }
+      @include screen-desktop-sm {
+        &:nth-of-type(1) {
+          left: 55rem;
+          top: 35rem;
+        }
+        &:nth-of-type(2) {
+          left: 4%;
+          top: 10rem;
+        }
+      }
     }
   }
   &.featureBox__left {
     .head {
+      @include screen-tablet-lg {
+        text-align: left;
+      }
+      @include screen-desktop-sm {
+        padding-left: 5%;
+      }
     }
     .text {
       right: 0;
@@ -127,12 +202,25 @@
         right: unset;
         left: 0;
       }
+      @include screen-tablet-lg {
+        left: unset;
+        right: 35%;
+      }
+      @include screen-desktop-sm {
+        right: 50%;
+      }
     }
     .characterBox {
       left: 0;
       @include screen-tablet-sm {
         left: unset;
         right: 0;
+      }
+      @include screen-tablet-lg {
+        right: 7%;
+      }
+      @include screen-desktop-sm {
+        right: 17rem;
       }
     }
     .portalBox {
@@ -152,6 +240,28 @@
           right: unset;
           left: 10vw;
           top: 50vw;
+        }
+      }
+      @include screen-tablet-lg {
+        &:nth-of-type(1) {
+          right: 40rem;
+          left: unset;
+          top: 15rem;
+        }
+        &:nth-of-type(2) {
+          right: 45rem;
+          left: unset;
+          top: 35rem;
+        }
+      }
+      @include screen-desktop-sm {
+        &:nth-of-type(1) {
+          right: 55rem;
+          top: 35rem;
+        }
+        &:nth-of-type(2) {
+          right: 4%;
+          top: 10rem;
         }
       }
     }

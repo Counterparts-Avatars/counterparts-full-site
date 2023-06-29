@@ -13,8 +13,8 @@ import logoMark from '@/public/counterparts-logo-mark.svg';
 import styles from './Portal.module.scss';
 
 interface PortalProps {
-  width?: number | string;
-  maxWidth?: number | string;
+  width?: number;
+  maxWidth?: number;
   rotationDirection: 'clockwise' | 'counterclockwise';
   scrollAnimation: boolean;
   logo: boolean;
@@ -52,7 +52,7 @@ const Portal = ({
         width && maxWidth
           ? {
               width: width,
-              height: width, // portal remains square
+              height: Math.min(width, maxWidth), // portal remains square
               maxWidth: maxWidth,
             }
           : {}
@@ -63,7 +63,7 @@ const Portal = ({
           width && maxWidth
             ? {
                 width: width,
-                height: width, // portal remains square
+                height: Math.min(width, maxWidth), // portal remains square
                 maxWidth: maxWidth,
                 rotate: rotation,
               }

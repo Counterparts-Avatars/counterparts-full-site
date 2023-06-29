@@ -33,7 +33,10 @@ const Hero = () => {
         setCharacterRootSize(width * 0.35);
         break;
       case width < breakpoints.xlarge && width >= breakpoints.large:
-        setCharacterRootSize(undefined);
+        setCharacterRootSize(width * 0.3);
+        break;
+      case width >= breakpoints.xlarge:
+        setCharacterRootSize(400);
         break;
     }
   }, [width]);
@@ -137,10 +140,10 @@ const Hero = () => {
               character={character7}
               scrollAnimation={width >= breakpoints.med}
               width={
-                characterRootSize ? characterRootSize * 0.6 : characterRootSize
+                characterRootSize ? characterRootSize * 0.7 : characterRootSize
               }
               maxWidth={
-                characterRootSize ? characterRootSize * 0.6 : characterRootSize
+                characterRootSize ? characterRootSize * 0.7 : characterRootSize
               }
             />
           </motion.div>

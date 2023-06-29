@@ -23,6 +23,8 @@ const AvatarModel = () => {
   let portalScale;
   let topPortalTranslateY;
   let bottomPortalTranslateY;
+  let topPortalTranslateX = '-50%';
+  let bottomPortalTranslateX = '-50%';
 
   if (width < breakpoints.xsmall) {
     portalScale = 0.5;
@@ -41,13 +43,17 @@ const AvatarModel = () => {
     topPortalTranslateY = '25%';
     bottomPortalTranslateY = '50%';
   } else if (width < breakpoints.xlarge && width >= breakpoints.large) {
-    portalScale = 0.6;
-    topPortalTranslateY = '5%';
-    bottomPortalTranslateY = '75%';
+    portalScale = 0.8;
+    topPortalTranslateY = '30%';
+    bottomPortalTranslateY = '50%';
+    topPortalTranslateX = '-60%';
+    bottomPortalTranslateX = '-40%';
   } else {
-    portalScale = 0.6;
-    topPortalTranslateY = '5%';
-    bottomPortalTranslateY = '75%';
+    portalScale = 0.8;
+    topPortalTranslateY = '30%';
+    bottomPortalTranslateY = '50%';
+    topPortalTranslateX = '-60%';
+    bottomPortalTranslateX = '-40%';
   }
 
   return (
@@ -85,7 +91,7 @@ const AvatarModel = () => {
           bottom: 'unset',
           left: '0',
           right: '0',
-          translateX: '-50%',
+          translateX: topPortalTranslateX,
           translateY: topPortalTranslateY,
         }}
         scale={portalScale}
@@ -97,7 +103,7 @@ const AvatarModel = () => {
           bottom: '0',
           left: '0',
           right: '0',
-          translateX: '-50%',
+          translateX: bottomPortalTranslateX,
           translateY: bottomPortalTranslateY,
         }}
         scale={`-${portalScale} ${portalScale}`}

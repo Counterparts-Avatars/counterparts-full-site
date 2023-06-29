@@ -11,6 +11,7 @@
   display: flex;
   align-items: flex-end;
   padding: 0 1%;
+  overflow: hidden;
   @include screen-mobile-lg {
     --width: 35rem;
   }
@@ -23,6 +24,7 @@
     position: relative;
     width: var(--width);
     height: var(--width);
+    overflow: hidden;
     .portal {
       object-fit: contain;
       filter: opacity(0.95);

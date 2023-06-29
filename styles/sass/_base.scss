@@ -22,10 +22,10 @@ html {
 body {
   background-image: linear-gradient(
     to bottom right,
-    $gradient-color-1,
-    $gradient-color-2,
-    $gradient-color-3,
-    $gradient-color-4
+    darken($gradient-color-1, 1%),
+    darken($gradient-color-2, 1%),
+    darken($gradient-color-3, 1%),
+    darken($gradient-color-4, 1%)
   );
 }
 
@@ -39,17 +39,19 @@ main {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  min-height: 100vh;
+  min-height: 100rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   gap: 4rem;
+  overflow: hidden;
 }
 
 section,
 nav,
 footer {
+  min-height: fit-content;
   margin: 0 calc($page-margin-xsmall / 2);
   width: calc(100vw - $page-margin-xsmall);
   max-width: $max-page-width;

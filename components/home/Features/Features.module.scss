@@ -5,9 +5,9 @@
   text-align: center;
   @include sectionInit;
   @include screen-mobile-lg {
-    margin-bottom: 5vw;
+    margin-bottom: 10vw;
   }
-  @include screen-mobile-lg {
-    margin-bottom: 25vw;
+  @include screen-desktop-sm {
+    margin-bottom: 0;
   }
 }

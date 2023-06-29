@@ -54,6 +54,12 @@
 }
 
 // Breakpoints
+@mixin screen-desktop-lg {
+  @media (min-width: 1599.98px) {
+    @content;
+  }
+}
+
 @mixin screen-desktop-sm {
   @media (min-width: 1279.98px) {
     @content;

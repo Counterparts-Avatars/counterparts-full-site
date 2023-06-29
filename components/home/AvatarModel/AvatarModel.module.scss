@@ -45,7 +45,20 @@
       '. . . shoes shoes'
       '. . . . .';
     --height: 70rem;
-    margin: 15rem 0;
+    margin-top: 15rem;
+  }
+  @include screen-desktop-sm {
+    grid-template-areas:
+      'glasses glasses . . .'
+      '. . . . .'
+      '. . . . .'
+      '. . . jacket jacket'
+      '. . . . .'
+      '. . . . .'
+      'pants pants . . .'
+      '. . . . .'
+      '. . . shoes shoes'
+      '. . . . .';
   }
   .portal {
     position: absolute;
@@ -79,6 +92,14 @@
       font-size: 2.4rem;
       line-height: 3.4rem;
       padding: 2rem 1.5rem;
+    }
+    @include screen-desktop-sm {
+      width: 70%;
+      &:nth-child(2n) {
+        margin: 0 auto;
+      }
+      &:nth-child(2n + 1) {
+      }
     }
     .callOutTitle {
       display: block;

@@ -6,6 +6,7 @@
   --width: 15rem;
   width: var(--width);
   height: var(--width);
+  overflow: hidden;
   .spinnerBox {
     width: var(--width);
     height: var(--width);

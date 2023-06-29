@@ -21,9 +21,9 @@ interface SplinePortalProps {
   width: number;
 }
 
+// const splineUrl =
+//   'https://prod.spline.design/LFoSb72iQYYsKVfN/scene.splinecode';
 const splineUrl =
-  'https://prod.spline.design/LFoSb72iQYYsKVfN/scene.splinecode';
-const splineUrlMobile =
   'https://prod.spline.design/I2wefwEIrxc3yBGa/scene.splinecode';
 
 const SplinePortal = ({ position, scale, width }: SplinePortalProps) => {
@@ -49,7 +49,7 @@ const SplinePortal = ({ position, scale, width }: SplinePortalProps) => {
         />
       }>
       <Spline
-        scene={windowWidth >= breakpoints.large ? splineUrl : splineUrlMobile}
+        scene={splineUrl}
         style={{
           position: 'absolute',
           zIndex: -100,
