@@ -52,7 +52,7 @@ export default function createAnimation(
         opacity: 1,
         translateY: 0,
         transition: {
-          duration: 0.5,
+          duration: 0.25,
         },
       },
     };
