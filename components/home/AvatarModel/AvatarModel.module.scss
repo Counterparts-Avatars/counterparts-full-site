@@ -77,23 +77,13 @@
     top: 58%;
     transform: translate(-50%, -50%);
     height: calc(var(--height) - 7%);
-    z-index: -1;
-  }
-  .soundwave {
-    object-fit: contain;
-    object-position: center;
-    z-index: -10;
-    filter: opacity(0.25);
-    transform: scale(1.2, 1.5);
-    @include screen-tablet-lg {
-      transform: scale(1, 1);
-    }
   }
   .callOut {
     text-align: center;
     padding: 1.5rem 1rem;
     font-size: 1.6rem;
     line-height: 2.6rem;
+    z-index: 1;
     @include textBox;
     @include screen-mobile-lg {
       font-size: 1.8rem;
@@ -107,10 +97,10 @@
     @include screen-desktop-sm {
       width: 70%;
       &:nth-child(2n) {
-        margin-right: 30%;
+        margin: 0 auto;
       }
       &:nth-child(2n + 1) {
-        margin: 0 auto;
+        margin-right: 30%;
       }
     }
     .callOutTitle {

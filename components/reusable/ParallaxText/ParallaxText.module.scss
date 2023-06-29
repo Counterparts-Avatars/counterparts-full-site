@@ -1,0 +1,51 @@
+@import '/styles/sass/mixins';
+
+.parallax {
+  overflow: hidden;
+  position: absolute;
+  width: calc(100vw + $page-margin-large * 2);
+  max-width: 1600px;
+  left: -$page-margin-large;
+  top: 33%;
+  transform: rotate(-5deg);
+  letter-spacing: -2px;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  z-index: -10;
+  &:nth-child(2) {
+    top: 67%;
+    @include screen-tablet-lg {
+      top: 70%;
+    }
+  }
+  .scroller {
+    font-weight: 600;
+    display: flex;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    .text {
+      font-size: 2rem;
+      display: block;
+      margin-right: 30px;
+      text-transform: uppercase;
+      color: rgba($color-white, 0.5);
+      @include screen-tablet-lg {
+        font-size: 3.5rem;
+        margin-right: 50px;
+      }
+      .counterpart {
+        font-size: 3rem;
+        color: rgba($color-white, 0.75);
+        @include screen-tablet-lg {
+          font-size: 5rem;
+        }
+        span {
+          color: rgba($color-light, 0.75);
+        }
+      }
+    }
+  }
+}

@@ -14,14 +14,15 @@
   }
   .gridBox {
     position: absolute;
-    width: calc(100% + 2 * $page-margin-large);
+    width: calc(100% + 2 * $page-margin-xsmall);
     max-width: 1600px;
     height: 90%;
     top: 23%;
     z-index: -10;
-    left: -$page-margin-xsmall / 2;
+    left: -$page-margin-xsmall;
     @include screen-mobile-sm {
-      left: -$page-margin-small / 2;
+      width: calc(100% + 2 * $page-margin-small);
+      left: -$page-margin-small;
     }
     @include screen-mobile-lg {
       top: 19vw;
@@ -34,15 +35,16 @@
       top: 32%;
     }
     @include screen-desktop-sm {
-      left: -$page-margin-large / 2;
+      width: calc(100% + 2 * $page-margin-large);
+      left: -$page-margin-large;
     }
     @include screen-desktop-lg {
-      top: 18rem;
+      top: 19rem;
     }
     .grid {
       object-fit: cover;
       object-position: center;
-      filter: opacity(0.2);
+      filter: opacity(0.5);
       @include screen-desktop-lg {
         object-fit: contain;
       }

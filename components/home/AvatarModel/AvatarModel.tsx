@@ -2,14 +2,14 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useWindowSize } from 'usehooks-ts';
 
-import soundWave from '@/public/sound-wave.svg';
 import character from '@/public/character-6.webp';
 import createAnimation from '@/helpers/createAnimation';
-import styles from './AvatarModel.module.scss';
 import SplinePortal from '@/components/reusable/SplinePortal/SplinePortal';
-import { useWindowSize } from 'usehooks-ts';
 import { breakpoints } from '@/helpers/breakpoints';
+import ParallaxText from '@/components/reusable/ParallaxText/ParallaxText';
+import styles from './AvatarModel.module.scss';
 
 const callOuts = [
   { title: 'Glasses', description: 'Funded climate research' },
@@ -66,13 +66,6 @@ const AvatarModel = () => {
         height={600}
         className={styles.avatar}
       />
-      <Image
-        src={soundWave}
-        alt="A large representation of a Counterparts avatar"
-        fill
-        sizes="100vw"
-        className={styles.soundwave}
-      />
       {callOuts.map((callOut, i) => (
         <motion.p
           key={i}
@@ -117,6 +110,10 @@ const AvatarModel = () => {
         scale={`-${portalScale} ${portalScale}`}
         width={300}
       />
+      <div style={{ width: '100%', height: '100%' }}>
+        <ParallaxText baseVelocity={1} />
+        <ParallaxText baseVelocity={-1} />
+      </div>
     </section>
   );
 };

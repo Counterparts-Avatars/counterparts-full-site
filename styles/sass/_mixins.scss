@@ -16,7 +16,7 @@
   padding: 2rem;
   z-index: 10;
   color: $color-light;
-  border: solid var(--border-width) rgba($color-light, 0.5);
+  border: solid var(--border-width) rgba($color-light, 0.25);
   font-size: 2.5rem;
   background-image: linear-gradient(to bottom, $gradient-color-3, $color-dark);
   box-shadow: 0 4px 8px rgba($color-dark, 0.75);
@@ -32,8 +32,8 @@
   &:hover,
   &:focus {
     cursor: pointer;
-    filter: saturate(1.2);
-    box-shadow: 0 2px 3px rgba($color-dark, 1);
+    filter: saturate(1.15);
+    box-shadow: 0 1px 4px rgba($color-accent, 0.75);
     & > span {
       transform: translateX(0.7rem);
     }

@@ -9,7 +9,7 @@ import createAnimation from '@/helpers/createAnimation';
 import character1 from '@/public/character-1.webp';
 import character7 from '@/public/character-7.webp';
 import character8 from '@/public/character-8.webp';
-import grid from '@/public/grid.svg';
+import grid from '@/public/grid-mountains.svg';
 import arrow from '@/public/arrow.svg';
 import Character from '@/components/reusable/Character/Character';
 import { breakpoints } from '@/helpers/breakpoints';
@@ -56,7 +56,7 @@ const Hero = () => {
         animate="show"
         className={styles.heroText}>
         <motion.div
-          variants={createAnimation('fadeInScale')}
+          variants={createAnimation('fadeIn')}
           className={styles.gridBox}>
           <Image
             src={grid}

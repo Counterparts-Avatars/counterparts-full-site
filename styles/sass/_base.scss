@@ -21,12 +21,23 @@ html {
 
 body {
   background-image: linear-gradient(
-    to bottom right,
-    darken($gradient-color-1, 1%),
-    darken($gradient-color-2, 1%),
-    darken($gradient-color-3, 1%),
-    darken($gradient-color-4, 1%)
-  );
+      to bottom,
+      rgba($color-dark, 1),
+      rgba($color-dark, 0) 3%
+    ),
+    linear-gradient(
+      to right,
+      rgba($color-dark, 0.35),
+      rgba($color-dark, 0),
+      rgba($color-dark, 0.35)
+    ),
+    linear-gradient(
+      to bottom right,
+      darken($gradient-color-1, 1%),
+      darken($gradient-color-2, 1%),
+      darken($gradient-color-3, 1%),
+      darken($gradient-color-4, 1%)
+    );
 }
 
 html,

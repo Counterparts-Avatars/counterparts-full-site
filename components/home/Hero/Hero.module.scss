@@ -7,6 +7,15 @@
   --gap: 2rem;
   text-align: center;
   @include sectionInit;
+  --dots-gap: max(100px, 0.6vw);
+  --dots-size: 2px;
+  --computed-dot-size: calc(var(--dots-size) / 2);
+  background-size: calc(var(--dots-gap) + var(--dots-size))
+    calc(var(--dots-gap) + var(--dots-size));
+  background-image: radial-gradient(
+    rgba($color-light, 0.4) var(--computed-dot-size),
+    transparent var(--computed-dot-size)
+  );
   @include screen-tablet-sm {
     flex-direction: row;
     --gap: 1rem;
@@ -21,30 +30,31 @@
   }
   .gridBox {
     position: absolute;
-    width: calc(100% + 2 * $page-margin-large);
+    width: calc(100% + 2 * $page-margin-xsmall);
     max-width: 1600px;
-    height: 45%;
-    top: 65%;
+    height: 100%;
+    top: -20%;
     z-index: -10;
-    left: -$page-margin-xsmall / 2;
+    left: -$page-margin-xsmall;
     @include screen-mobile-sm {
-      left: -$page-margin-small / 2;
+      width: calc(100% + 2 * $page-margin-small);
+      left: -$page-margin-small;
     }
     @include screen-tablet-sm {
-      height: 60%;
-      top: 53%;
+      top: -15%;
+    }
+    @include screen-tablet-lg {
+      top: -8%;
     }
     @include screen-desktop-sm {
-      top: 28rem;
-      left: -$page-margin-large / 2;
-    }
-    @include screen-desktop-lg {
-      top: 26rem;
+      top: 10%;
+      left: -$page-margin-large;
+      width: calc(100% + 2 * $page-margin-large);
     }
     .grid {
-      object-fit: cover;
-      object-position: center;
-      filter: opacity(0.2);
+      object-fit: contain;
+      object-position: bottom;
+      filter: opacity(0.25);
       @include screen-desktop-lg {
         object-fit: contain;
       }
