@@ -26,7 +26,7 @@ const CallToAction = () => {
         variants={createAnimation('staggerContainer')}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.75 }}
+        viewport={{ once: true, amount: 0.65 }}
         className={styles.motionWrapper}>
         <motion.h3
           variants={createAnimation('fadeInDown')}

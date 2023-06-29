@@ -21,11 +21,6 @@ const Navbar = () => {
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  const handleScroll = () => {
-    const position = scrollY;
-    setScrollPosition(position);
-  };
-
   useEffect(() => {
     switch (pathname) {
       case '/':
@@ -39,12 +34,16 @@ const Navbar = () => {
         break;
     }
 
+    const handleScroll = () => {
+      const position = scrollY;
+      setScrollPosition(position);
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [pathname]);
+  }, [pathname, width]);
 
   return (
     <>

@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
+import soundWave from '@/public/sound-wave.svg';
 import character from '@/public/character-6.webp';
 import createAnimation from '@/helpers/createAnimation';
 import styles from './AvatarModel.module.scss';
@@ -64,6 +65,13 @@ const AvatarModel = () => {
         width={400}
         height={600}
         className={styles.avatar}
+      />
+      <Image
+        src={soundWave}
+        alt="A large representation of a Counterparts avatar"
+        fill
+        sizes="100vw"
+        className={styles.soundwave}
       />
       {callOuts.map((callOut, i) => (
         <motion.p
