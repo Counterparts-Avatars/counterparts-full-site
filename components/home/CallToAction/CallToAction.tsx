@@ -34,14 +34,7 @@ const CallToAction = () => {
           Be the first
         </motion.h3>
         <motion.div
-          variants={createAnimation('custom', {
-            duration: 0.5,
-            delay: 0,
-            movementVector: { x: 0, y: 0 },
-            timingFunction: 'linear',
-            opacity: { start: 0, end: 0.5 },
-            scale: { start: 1.15, end: 1.3 },
-          })}
+          variants={createAnimation('fadeIn')}
           className={styles.portalBox}>
           <Portal
             width={width * 0.55}
