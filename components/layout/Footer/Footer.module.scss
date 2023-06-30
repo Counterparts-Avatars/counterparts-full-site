@@ -48,11 +48,15 @@
       align-items: center;
       margin: auto;
       .socialIcon {
+        transition: all 0.2s;
         @include screen-mobile-lg {
           width: 10vw;
           max-width: 4rem;
           height: 10vw;
           max-height: 4rem;
+        }
+        &:hover {
+          filter: opacity(0.75);
         }
       }
     }
