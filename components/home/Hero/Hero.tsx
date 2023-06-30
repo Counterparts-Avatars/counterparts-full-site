@@ -17,8 +17,12 @@ import styles from './Hero.module.scss';
 
 const Hero = () => {
   const { width } = useWindowSize();
-  const isMobile = window.innerWidth < breakpoints.med;
-  const isTablet = window.innerWidth < breakpoints.large;
+  let isMobile = false;
+  let isTablet = false;
+  if (typeof window !== 'undefined') {
+    isMobile = window.innerWidth < breakpoints.med;
+    isTablet = window.innerWidth < breakpoints.large;
+  }
 
   const [characterRootSize, setCharacterRootSize] = useState<
     number | undefined

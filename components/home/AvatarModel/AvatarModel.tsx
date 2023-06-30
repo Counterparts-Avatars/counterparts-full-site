@@ -20,7 +20,10 @@ const callOuts = [
 
 const AvatarModel = () => {
   const { width } = useWindowSize();
-  const isMobile = window.innerWidth < breakpoints.med;
+  let isMobile = false;
+  if (typeof window !== 'undefined') {
+    isMobile = window.innerWidth < breakpoints.med;
+  }
 
   let portalScale;
   let topPortalTranslateY;

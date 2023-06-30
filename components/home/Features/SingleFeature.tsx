@@ -25,7 +25,11 @@ const SingleFeature = ({
   character,
 }: SingleFeatureProps) => {
   const { width } = useWindowSize();
-  const isMobile = window.innerWidth < breakpoints.med;
+
+  let isMobile = false;
+  if (typeof window !== 'undefined') {
+    isMobile = window.innerWidth < breakpoints.med;
+  }
 
   return (
     <motion.div

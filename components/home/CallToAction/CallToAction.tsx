@@ -17,7 +17,10 @@ const audiowide = Audiowide({ subsets: ['latin'], weight: '400' });
 
 const CallToAction = () => {
   const { width } = useWindowSize();
-  const isMobile = window.innerWidth < breakpoints.med;
+  let isMobile = false;
+  if (typeof window !== 'undefined') {
+    isMobile = window.innerWidth < breakpoints.med;
+  }
 
   return (
     <section
