@@ -17,19 +17,28 @@ const audiowide = Audiowide({ subsets: ['latin'], weight: '400' });
 
 const CallToAction = () => {
   const { width } = useWindowSize();
+  const isMobile = window.innerWidth < breakpoints.med;
 
   return (
     <section
       id="be-the-first"
       className={styles.actionSection}>
       <motion.div
-        variants={createAnimation('staggerContainer')}
+        variants={
+          !isMobile
+            ? createAnimation('staggerContainer')
+            : createAnimation('fadeIn')
+        }
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.65 }}
         className={styles.motionWrapper}>
         <motion.h3
-          variants={createAnimation('fadeInDown')}
+          variants={
+            !isMobile
+              ? createAnimation('fadeInDown')
+              : createAnimation('fadeIn')
+          }
           className={styles.actionHead}>
           Be the first
         </motion.h3>
@@ -44,7 +53,10 @@ const CallToAction = () => {
             logo
           />
         </motion.div>
-        <motion.div variants={createAnimation('fadeInUp')}>
+        <motion.div
+          variants={
+            !isMobile ? createAnimation('fadeInUp') : createAnimation('fadeIn')
+          }>
           <Image
             src={
               width >= breakpoints.med
@@ -59,7 +71,9 @@ const CallToAction = () => {
         </motion.div>
         <motion.div
           className={styles.formContainer}
-          variants={createAnimation('fadeInUp')}>
+          variants={
+            !isMobile ? createAnimation('fadeInUp') : createAnimation('fadeIn')
+          }>
           <p className={styles.subText}>
             Sign up to reserve your 1st generation{' '}
             <span className={audiowide.className}>

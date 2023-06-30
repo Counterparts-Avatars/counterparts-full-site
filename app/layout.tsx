@@ -1,4 +1,5 @@
 import { Exo_2 } from 'next/font/google';
+import { MotionConfig } from 'framer-motion';
 
 import Navbar from '@/components/layout/Navbar/Navbar';
 import Footer from '@/components/layout/Footer/Footer';

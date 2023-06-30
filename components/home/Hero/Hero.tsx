@@ -17,6 +17,9 @@ import styles from './Hero.module.scss';
 
 const Hero = () => {
   const { width } = useWindowSize();
+  const isMobile = window.innerWidth < breakpoints.med;
+  const isTablet = window.innerWidth < breakpoints.large;
+
   const [characterRootSize, setCharacterRootSize] = useState<
     number | undefined
   >();
@@ -51,7 +54,11 @@ const Hero = () => {
   return (
     <section className={styles.heroSection}>
       <motion.div
-        variants={createAnimation('staggerContainer')}
+        variants={
+          !isMobile
+            ? createAnimation('staggerContainer')
+            : createAnimation('fadeIn')
+        }
         initial="hidden"
         animate="show"
         className={styles.heroText}>
@@ -99,7 +106,11 @@ const Hero = () => {
         </motion.button>
       </motion.div>
       <motion.div
-        variants={createAnimation('staggerContainer')}
+        variants={
+          !isMobile
+            ? createAnimation('staggerContainer')
+            : createAnimation('fadeIn')
+        }
         initial="hidden"
         animate="show"
         className={styles.characterBox}>
@@ -114,7 +125,7 @@ const Hero = () => {
             maxWidth={characterRootSize}
           />
         </motion.div>
-        {width >= breakpoints.med && (
+        {!isMobile && (
           <motion.div
             className={styles.characterWrapper}
             variants={createAnimation('fadeIn')}>
@@ -131,7 +142,7 @@ const Hero = () => {
             />
           </motion.div>
         )}
-        {width >= breakpoints.large && (
+        {!isMobile && !isTablet && (
           <motion.div
             className={styles.characterWrapper}
             variants={createAnimation('fadeIn')}>

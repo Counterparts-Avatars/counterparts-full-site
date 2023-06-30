@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { MotionConfig } from 'framer-motion';
 
 import radial from '@/public/radial.svg';
 import Hero from '@/components/home/Hero/Hero';
@@ -9,23 +12,25 @@ import CallToAction from '@/components/home/CallToAction/CallToAction';
 
 export default function Home() {
   return (
-    <main>
-      <Image
-        src={radial}
-        alt=""
-        width={2000}
-        height={45}
-        style={{ position: 'absolute' }}
-      />
-      <Hero />
-      <HoloText text="Make your counterpart as awesome as you are" />
-      <Features />
-      <HoloText
-        text="Build something worth "
-        emphasizedText="more than a follower count"
-      />
-      <AvatarModel />
-      <CallToAction />
-    </main>
+    <MotionConfig reducedMotion="user">
+      <main>
+        <Image
+          src={radial}
+          alt=""
+          width={2000}
+          height={45}
+          style={{ position: 'absolute' }}
+        />
+        <Hero />
+        <HoloText text="Make your counterpart as awesome as you are" />
+        <Features />
+        <HoloText
+          text="Build something worth "
+          emphasizedText="more than a follower count"
+        />
+        <AvatarModel />
+        <CallToAction />
+      </main>
+    </MotionConfig>
   );
 }

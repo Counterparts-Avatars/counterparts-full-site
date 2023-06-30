@@ -20,6 +20,7 @@ const callOuts = [
 
 const AvatarModel = () => {
   const { width } = useWindowSize();
+  const isMobile = window.innerWidth < breakpoints.med;
 
   let portalScale;
   let topPortalTranslateY;
@@ -71,9 +72,11 @@ const AvatarModel = () => {
           key={i}
           className={styles.callOut}
           variants={
-            i % 2 === 0
-              ? createAnimation('fadeInRight')
-              : createAnimation('fadeInLeft')
+            !isMobile
+              ? i % 2 === 0
+                ? createAnimation('fadeInRight')
+                : createAnimation('fadeInLeft')
+              : createAnimation('fadeIn')
           }
           initial="hidden"
           whileInView="show"

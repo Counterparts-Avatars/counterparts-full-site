@@ -25,6 +25,7 @@ const SingleFeature = ({
   character,
 }: SingleFeatureProps) => {
   const { width } = useWindowSize();
+  const isMobile = window.innerWidth < breakpoints.med;
 
   return (
     <motion.div
@@ -34,7 +35,7 @@ const SingleFeature = ({
           : `${styles.featureBox} ${styles.featureBox__right}`
       }
       variants={
-        width >= breakpoints.med
+        !isMobile
           ? createAnimation('staggerContainer')
           : createAnimation('fadeIn')
       }
@@ -43,9 +44,7 @@ const SingleFeature = ({
       viewport={{ once: true, amount: 0.4 }}>
       <motion.div
         variants={
-          width >= breakpoints.med
-            ? createAnimation('fadeInScale')
-            : createAnimation('fadeIn')
+          !isMobile ? createAnimation('fadeInScale') : createAnimation('fadeIn')
         }
         className={styles.gridBox}>
         <Image
@@ -57,15 +56,19 @@ const SingleFeature = ({
         />
       </motion.div>
       <motion.h3
-        variants={createAnimation('fadeInDown')}
+        variants={
+          !isMobile ? createAnimation('fadeInDown') : createAnimation('fadeIn')
+        }
         className={styles.head}>
         {head}
       </motion.h3>
       <motion.div
         variants={
-          index % 2 === 0
-            ? createAnimation('fadeInLeft')
-            : createAnimation('fadeInRight')
+          !isMobile
+            ? index % 2 === 0
+              ? createAnimation('fadeInLeft')
+              : createAnimation('fadeInRight')
+            : createAnimation('fadeIn')
         }
         className={styles.characterBox}>
         <Character
@@ -78,9 +81,11 @@ const SingleFeature = ({
       </motion.div>
       <motion.figure
         variants={
-          index % 2 === 0
-            ? createAnimation('fadeInRight')
-            : createAnimation('fadeInLeft')
+          !isMobile
+            ? index % 2 === 0
+              ? createAnimation('fadeInRight')
+              : createAnimation('fadeInLeft')
+            : createAnimation('fadeIn')
         }
         className={styles.portalBox}>
         <Portal
@@ -94,9 +99,11 @@ const SingleFeature = ({
       {width >= breakpoints.med && (
         <motion.figure
           variants={
-            index % 2 === 0
-              ? createAnimation('fadeInRight')
-              : createAnimation('fadeInLeft')
+            !isMobile
+              ? index % 2 === 0
+                ? createAnimation('fadeInRight')
+                : createAnimation('fadeInLeft')
+              : createAnimation('fadeIn')
           }
           className={styles.portalBox}>
           <Portal
@@ -118,9 +125,11 @@ const SingleFeature = ({
       )}
       <motion.p
         variants={
-          index % 2 === 0
-            ? createAnimation('fadeInRight')
-            : createAnimation('fadeInLeft')
+          !isMobile
+            ? index % 2 === 0
+              ? createAnimation('fadeInRight')
+              : createAnimation('fadeInLeft')
+            : createAnimation('fadeIn')
         }
         className={styles.text}>
         {text}
