@@ -7,15 +7,17 @@
   --gap: 2rem;
   text-align: center;
   @include sectionInit;
-  --dots-gap: 100px;
-  --dots-size: 2px;
-  --computed-dot-size: calc(var(--dots-size) / 2);
-  background-size: calc(var(--dots-gap) + var(--dots-size))
-    calc(var(--dots-gap) + var(--dots-size));
-  background-image: radial-gradient(
-    rgba($color-light, 0.4) var(--computed-dot-size),
-    transparent var(--computed-dot-size)
-  );
+  @include screen-tablet-sm {
+    --dots-gap: 100px;
+    --dots-size: 2px;
+    --computed-dot-size: calc(var(--dots-size) / 2);
+    background-size: calc(var(--dots-gap) + var(--dots-size))
+      calc(var(--dots-gap) + var(--dots-size));
+    background-image: radial-gradient(
+      rgba($color-light, 0.4) var(--computed-dot-size),
+      transparent var(--computed-dot-size)
+    );
+  }
   @include screen-tablet-sm {
     flex-direction: row;
     --gap: 1rem;
