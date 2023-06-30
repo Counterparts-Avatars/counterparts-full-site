@@ -8,7 +8,41 @@ const exo2 = Exo_2({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Counterparts Avatars',
-  description: 'Digital beings creating real-world impact.',
+  description:
+    'A virtual twin of your contributions towards humanity, for use across the metaverse.',
+  generator: 'Counterparts.io',
+  applicationName: 'Counterparts Avatars',
+  referrer: 'origin-when-cross-origin',
+  keywords: [
+    'Counterparts',
+    'Avatar',
+    'Metaverse',
+    '3D',
+    'NFT',
+    'Web3',
+    'Impact',
+    'Gaming',
+  ],
+  authors: [{ name: 'Brett Cornick' }],
+  colorScheme: 'dark',
+  creator: 'Brett Cornick',
+  publisher: 'Counterparts.io',
+  openGraph: {
+    title: 'Counterparts Avatars',
+    description:
+      'A virtual twin of your contributions towards humanity, for use across the metaverse.',
+    url: 'https://counterparts.io',
+    siteName: 'Counterparts Avatars',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Counterparts Avatars',
+    description:
+      'A virtual twin of your contributions towards humanity, for use across the metaverse.',
+    creator: '@brett_cornick',
+  },
 };
 
 export default function RootLayout({
