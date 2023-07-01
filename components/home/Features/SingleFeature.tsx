@@ -45,7 +45,7 @@ const SingleFeature = ({
       }
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.4 }}>
+      viewport={{ once: true, amount: 0.25 }}>
       <motion.div
         variants={
           !isMobile ? createAnimation('fadeInScale') : createAnimation('fadeIn')
