@@ -99,6 +99,9 @@
     .description {
       font-size: 1.9rem;
       line-height: 2.7rem;
+      .emphasized {
+        font-weight: 600;
+      }
       @include screen-mobile-lg {
         font-size: 5vw;
         line-height: 6.3vw;

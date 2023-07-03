@@ -91,8 +91,8 @@ const Hero = () => {
           <br />
           contributions towards humanity,
           <br />
-          for use
-          <span style={{ fontWeight: 600 }}> across the metaverse</span>
+          for use{' '}
+          <span className={styles.emphasized}>across the metaverse</span>
         </motion.p>
         <motion.button
           variants={createAnimation('fadeIn')}
