@@ -70,7 +70,7 @@ const Footer = () => {
         <motion.p
           className={styles.copyright}
           variants={createAnimation('fadeIn')}>
-          &copy; 2023 Counterparts, Inc.
+          &copy; 2023 Counterparts DAO
         </motion.p>
       </motion.footer>
     </div>

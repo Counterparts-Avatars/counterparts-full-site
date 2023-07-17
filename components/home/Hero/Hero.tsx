@@ -26,7 +26,7 @@ const Hero = () => {
 
   const [characterRootSize, setCharacterRootSize] = useState<
     number | undefined
-  >();
+  >(400);
 
   useEffect(() => {
     switch (true) {
@@ -94,8 +94,7 @@ const Hero = () => {
           for use{' '}
           <span className={styles.emphasized}>across the metaverse</span>
         </motion.p>
-        <motion.button
-          variants={createAnimation('fadeIn')}
+        <button
           className={styles.mainBtn}
           onClick={scrollToPos}>
           Sign up{' '}
@@ -107,7 +106,7 @@ const Hero = () => {
               height={width >= breakpoints.small ? 35 : 25}
             />
           </span>
-        </motion.button>
+        </button>
       </motion.div>
       <motion.div
         variants={

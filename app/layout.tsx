@@ -1,5 +1,5 @@
 import { Exo_2 } from 'next/font/google';
-import { MotionConfig } from 'framer-motion';
+import { Metadata } from 'next';
 
 import Navbar from '@/components/layout/Navbar/Navbar';
 import Footer from '@/components/layout/Footer/Footer';
@@ -7,7 +7,7 @@ import '../styles/globals.scss';
 
 const exo2 = Exo_2({ subsets: ['latin'] });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Counterparts Avatars',
   description:
     'A virtual twin of your contributions towards humanity, for use across the metaverse.',
