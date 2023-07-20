@@ -4,14 +4,14 @@ import discord from '@/public/discord.svg';
 import linkedin from '@/public/linkedin.svg';
 
 const socials = [
-  {
-    name: 'Instagram',
-    href: 'https://www.instagram.com/',
-    icon: instagram,
-  },
+  // {
+  //   name: 'Instagram',
+  //   href: 'https://www.instagram.com/',
+  //   icon: instagram,
+  // },
   {
     name: 'Twitter',
-    href: 'https://www.twitter.com/',
+    href: 'https://twitter.com/CounterpartsDAO',
     icon: twitter,
   },
   // {
@@ -21,7 +21,7 @@ const socials = [
   // },
   {
     name: 'LinkedIn',
-    href: 'https://www.linkedin.com/',
+    href: 'https://www.linkedin.com/company/counterparts-dao/',
     icon: linkedin,
   },
 ];
