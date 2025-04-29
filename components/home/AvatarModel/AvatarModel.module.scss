@@ -8,13 +8,11 @@
   height: var(--height);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   grid-template-areas:
     'glasses glasses glasses glasses .'
     '. . . . .'
-    '. . . . .'
     '. jacket jacket jacket jacket'
-    '. . . . .'
     '. . . . .'
     'pants pants pants pants .'
     '. . . . .'
@@ -24,9 +22,7 @@
     grid-template-areas:
       'glasses glasses glasses . .'
       '. . . . .'
-      '. . . . .'
       '. . jacket jacket jacket'
-      '. . . . .'
       '. . . . .'
       'pants pants pants . .'
       '. . . . .'
@@ -37,9 +33,7 @@
     grid-template-areas:
       'glasses glasses . . .'
       '. . . . .'
-      '. . . . .'
       '. . . jacket jacket'
-      '. . . . .'
       '. . . . .'
       'pants pants . . .'
       '. . . . .'
@@ -52,9 +46,7 @@
     grid-template-areas:
       'glasses glasses . . .'
       '. . . . .'
-      '. . . . .'
       '. . . jacket jacket'
-      '. . . . .'
       '. . . . .'
       'pants pants . . .'
       '. . . . .'
@@ -75,9 +67,9 @@
     position: absolute;
     width: auto;
     left: 45%;
-    top: 58%;
+    top: 55%;
     transform: translate(-50%, -50%);
-    height: calc(var(--height) - 7%);
+    height: 115rem;
   }
   .callOut {
     text-align: center;
